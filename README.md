@@ -246,5 +246,12 @@ Subir carpeta `dist/` o usar CLI de `vercel`.
 
 ---
 
+<a href="https://github.com/Eracres/React">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="60"/>
+</a>
+
+
+---
+
 ¡Felicidades! Has completado el curso completo de Angular 🎉
 

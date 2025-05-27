@@ -65,13 +65,13 @@ Esto crea los archivos:
 
 ## 🧪 Ejemplos de este módulo
 
-* [🧪 Ejemplo 1: Componente básico con interpolación](./Ejemplos/README.md)
+### [🧪 Listado de Ejemplos](./Ejemplos/README.md)
 
 ---
 
 ## 📋 Ejercicios propuestos
 
-* [📋 Ejercicio 1: Bienvenida con interpolación](./Ejercicios/README.md)
+### [📋 Listado de Ejercicios](./Ejercicios/README.md)
 
 ---
 

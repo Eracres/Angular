@@ -31,6 +31,8 @@ ng generate component usuario
 
 ### 📋 - Ejercicio 2 [➡️](./Ejercicio_2.md)
 
+### 📋 - [Volver a Ejercicios](../README.md)
+
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md) 

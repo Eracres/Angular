@@ -51,7 +51,7 @@ nombre: string = 'Lucía';
 
 ## 🔁 Navegación
 
-### 📘 [Volver a Módulo 1](./Modulo_1.md)
+### 📘 [Volver a Módulo 1](../Modulo_1_Introduccion_a_Angular/Modulo_1.md)
 
 ### 📋 [Ir a Ejercicios](./Ejercicios_Modulo_1.md)
 

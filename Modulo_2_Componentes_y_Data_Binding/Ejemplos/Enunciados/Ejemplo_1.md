@@ -38,8 +38,8 @@ Concatenar texto: `{{ 'Bienvenido a ' + titulo }}`
 
 ## 🔁 Navegación
 
-### 📘 [Volver a Módulo 2](../Modulo_2.md)
+### 📘 [Volver a Módulo 2](../../Modulo_2.md)
 
-### 📋 [Ir a Ejercicios](../Ejercicios/Ejercicios_Modulo_2.md)
+### 📋 [Ir a Ejercicios](../../Ejercicios/Enunciados/README.md)
 
 ### 🏠 [Inicio](../README.md)

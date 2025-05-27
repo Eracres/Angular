@@ -25,7 +25,7 @@ Crear un componente que combine `*ngIf`, `*ngFor`, `ngClass` y `ngStyle`.
 
 ## 🔁 Navegación
 
-### 📋 -  [⬅️](./Ejercicio_5.md) Ejercicio 5 - Modulo 4 [➡️](../../../Modulo_4_/Modulo_4.md)
+### 📋 -  [⬅️](./Ejercicio_5.md) Ejercicio 5 - Modulo 4 [➡️](../../../Modulo_4_Routing/Modulo_4.md)
 
 ### 📋 - [Volver a Ejercicios](../README.md)
 

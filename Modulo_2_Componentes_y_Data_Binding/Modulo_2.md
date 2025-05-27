@@ -93,6 +93,6 @@ mostrarInfo() {
 
 ## 🔁 Navegación
 
-### [⬅️](../Modulo_1_Introduccion_a_Angular/Modulo_1.md) Módulo 1 - Módulo 3 [➡️](./Modulo_3.md)
+### [⬅️](../Modulo_1_Introduccion_a_Angular/Modulo_1.md) Módulo 1 - Módulo 3 [➡️] (../Modulo_3_Directivas_Angular/Modulo_3.md)
 
 ### 🏠 [Volver al Inicio](../README.md)

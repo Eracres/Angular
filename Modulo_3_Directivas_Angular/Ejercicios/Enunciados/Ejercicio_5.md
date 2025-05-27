@@ -1,3 +1,24 @@
+# 📋 Ejercicio 5: Estilo dinámico con ngStyle
+
+## 🎯 Objetivo
+Practicar el uso de `ngStyle` para aplicar estilos desde el componente.
+
+---
+
+## 📝 Instrucciones
+1. Declara una variable `colorFondo: string = 'yellow';`
+
+2. Aplica ese color de fondo a un `div` usando `[ngStyle]`
+
+3. Agrega botones para cambiar el color dinámicamente
+
+---
+
+## ✅ Criterios de evaluación
+- Se usa correctamente `ngStyle`
+- El fondo cambia dinámicamente
+- No hay errores al aplicar estilos
+
 ---
 
 ## 🔁 Navegación

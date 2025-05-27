@@ -6,6 +6,8 @@
 ### 📋 2. [Imagen dinámica](./Enunciados/Ejercicio_2.md)
 ### 📋 3. [Botón con evento](./Enunciados/Ejercicio_3.md)
 ### 📋 4. [Checkbox con mensaje](./Enunciados/Ejercicio_4.md)
+### 📋 5. [Formulario simple de contacto](./Enunciados/Ejercicio_5.md)
+### 📋 6. [Cambiar estilos dinámicamente](./Enunciados/Ejercicio_6.md)
 
 ---
 

@@ -23,9 +23,9 @@ Aplicar estilos desde el componente usando property binding.
 
 ## 🔁 Navegación
 
-### 📋 - Ejercicio 7 [➡️](./Ejercicio_7.md)
+### 📋 -  [⬅️](./Ejercicio_5.md) Ejercicio 5
 
-### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
+### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md) 
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md) 
 

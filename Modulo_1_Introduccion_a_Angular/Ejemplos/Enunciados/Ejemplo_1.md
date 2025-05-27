@@ -53,8 +53,8 @@ nombre: string = 'Lucía';
 
 ### 🧪 - [⬅️](./Ejemplo_0.md) Ejemplo 0
 
-### 📋 - [Ir a Ejercicios](./Ejercicios/README.md)
+### 📋 - [Ir a Ejercicios](../Ejercicios/README.md)
 
-### 📘 - [Volver a Módulo 1](../Modulo_1.md)
+### 📘 - [Volver a Módulo 1](../../Modulo_1.md)
 
-### 🏠 - [Inicio](../README.md)
+### 🏠 - [Inicio](../../../README.md)

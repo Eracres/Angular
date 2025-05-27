@@ -81,13 +81,13 @@ mostrarInfo() {
 
 ## 🧪 Ejemplos de este módulo
 
-* [🧪 Ejemplos del Módulo 2](./Ejemplos_Modulo_2.md)
+* [🧪 Ejemplos del Módulo 2](./Ejemplos/README.md)
 
 ---
 
 ## 📋 Ejercicios propuestos
 
-* [📋 Ejercicios del Módulo 2](./Ejercicios_Modulo_2.md)
+* [📋 Ejercicios del Módulo 2](./Ejercicios/README.md)
 
 ---
 

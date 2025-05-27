@@ -65,7 +65,7 @@ Esto crea los archivos:
 
 ## 🧪 Ejemplos de este módulo
 
-* [🧪 Ejemplo 1: Componente básico con interpolación](./Ejemplos_Modulo_1.md)
+* [🧪 Ejemplo 1: Componente básico con interpolación](./Ejemplos/Ejemplo_1.md)
 
 ---
 

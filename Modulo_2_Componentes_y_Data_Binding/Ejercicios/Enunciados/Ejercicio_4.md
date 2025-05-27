@@ -25,6 +25,8 @@ Usar `[(ngModel)]` con un checkbox para mostrar contenido condicional.
 
 ### 📋 - [⬅️](./Ejercicio_3.md) Ejercicio 3 - Ejercicio 5 [➡️](./Ejercicio_5.md)
 
+### 📋 - [Volver a Ejercicios](../README.md)
+
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md) 

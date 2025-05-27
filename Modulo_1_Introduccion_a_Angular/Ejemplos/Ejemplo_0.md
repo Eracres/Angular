@@ -34,10 +34,10 @@ Abre: [http://localhost:4200](http://localhost:4200)
 
 ## 🔁 Navegación
 
-### 🧪 Ejemplo 1 [➡️](./Ejemplo_1.md) 
+### 🧪 - Ejemplo 1 [➡️](./Ejemplo_1.md) 
 
-### 📘 [Volver a Módulo 1](../Modulo_1.md) 
+### 📘 - [Volver a Módulo 1](../Modulo_1.md) 
 
-### 📋 [Ir a Ejercicios](../Ejercicios/Ejercicio_1.md)
+### 📋 - [Ir a Ejercicios](../Ejercicios/Ejercicio_1.md)
 
-### 🏠 [Inicio](../README.md)
+### 🏠 - [Inicio](../README.md)

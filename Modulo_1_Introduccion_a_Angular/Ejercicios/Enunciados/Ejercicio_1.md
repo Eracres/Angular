@@ -57,6 +57,6 @@ Y úsalo desde el padre:
 
 ### 🧪 - [Ir a Ejemplos](./Ejemplos_Modulo_1.md)
 
-### 📘 - [Volver a Módulo 1](./Modulo_1.md) 
+### 📘 - [Volver a Módulo 1](../../Modulo_1.md) 
 
 ### 🏠 - [Inicio](../README.md)

@@ -33,7 +33,7 @@ Combinar redirección con rutas hijas
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 5 [➡️](../../../Modulo_5/Modulo_5.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 5 [➡️](../../../Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

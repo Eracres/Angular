@@ -35,8 +35,6 @@ Agregar un índice: `let i = index`
 <li *ngFor="let fruta of frutas; let i = index">{{ i + 1 }}. {{ fruta }}</li>
 ```
 
-
-
 ---
 
 ## 🔁 Navegación

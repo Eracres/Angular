@@ -2,7 +2,7 @@
 
 ## 🔁 Navegación
 
-### 📋 - Ejercicio 1 [➡️](./Ejemplo_1.md)
+### 📋 - Ejercicio 1 [➡️](./Ejemplo_0.md)
 
 ### 🧪 - [Ir a Ejemplos](../Ejemplos/README.md)
 

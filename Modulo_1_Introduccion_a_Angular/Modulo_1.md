@@ -71,12 +71,12 @@ Esto crea los archivos:
 
 ## 📋 Ejercicios propuestos
 
-* [📋 Ejercicio 1: Bienvenida con interpolación](./Ejercicios_Modulo_1.md)
+* [📋 Ejercicio 1: Bienvenida con interpolación](./Ejercicios/Ejercicio_1.md)
 
 ---
 
 ## 🔁 Navegación
 
-➡️ [Módulo 2](../Modulo_2.md)
+### Módulo 2 ➡️[](../../Modulo_2_Componentes_y_Data_Binding/Modulo_2.md)
 
-🏠 [Volver al Inicio](../README.md)
+### 🏠 [Volver al Inicio](../README.md)

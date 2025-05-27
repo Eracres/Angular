@@ -53,6 +53,8 @@ Y úsalo desde el padre:
 
 ## 🔁 Navegación
 
-📘 [Volver a Módulo 1](./Modulo_1.md) | 🧪 [Ver Ejemplos](./Ejemplos_Modulo_1.md)
+### 🧪 [Ver Ejemplos](./Ejemplos_Modulo_1.md)
 
-🏠 [Inicio](../README.md)
+### 📘 [Volver a Módulo 1](./Modulo_1.md) 
+
+### 🏠 [Inicio](../README.md)

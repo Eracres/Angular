@@ -1,6 +1,6 @@
 # 🧪 Ejemplos del Módulo 2: Componentes y Data Binding
 
-## 📋 Índice
+## 📌 Índice
 
 ### 🧪 0. [Property binding](./Enunciados/Ejemplo_0.md)  
 ### 🧪 1. [Interpolación básica](./Enunciados/Ejemplo_1.md)

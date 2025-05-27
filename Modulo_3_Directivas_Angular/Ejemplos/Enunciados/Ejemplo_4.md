@@ -44,7 +44,7 @@ Controlar con botón: `<button (click)=\"error = !error\">Toggle error</button>`
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
-### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
+### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
 
 ### 🏠 - [Inicio](../../../README.md)
 

@@ -51,8 +51,10 @@ nombre: string = 'Lucía';
 
 ## 🔁 Navegación
 
-### 📘 [Volver a Módulo 1](../Modulo_1.md)
+### 🧪 - [⬅️](./Ejemplo_0.md) Ejemplo 0
 
-### 📋 [Ir a Ejercicios](./Ejercicios_Modulo_1.md)
+### 📘 - [Volver a Módulo 1](../Modulo_1.md)
 
-### 🏠 [Inicio](../README.md)
+### 📋 - [Ir a Ejercicios](./Ejercicios_Modulo_1.md)
+
+### 🏠 - [Inicio](../README.md)

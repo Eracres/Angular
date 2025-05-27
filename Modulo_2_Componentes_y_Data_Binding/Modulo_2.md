@@ -81,13 +81,13 @@ mostrarInfo() {
 
 ## 🧪 Ejemplos de este módulo
 
-* [🧪 Listado de Ejemplos](./Ejemplos/README.md)
+#### [🔗 Listado de Ejemplos](./Ejemplos/README.md)
 
 ---
 
 ## 📋 Ejercicios propuestos
 
-* [📋 Listado de Ejemplos](./Ejercicios/README.md)
+#### [🔗 Listado de Ejemplos](./Ejercicios/README.md)
 
 ---
 

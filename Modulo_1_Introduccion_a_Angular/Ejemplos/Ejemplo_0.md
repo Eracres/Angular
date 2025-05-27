@@ -1,11 +1,11 @@
-## 🧪 Ejemplo 0: Instalación y creación del entorno Angular
+# 🧪 Ejemplo 0: Instalación y creación del entorno Angular
 
-### 🎯 Objetivo
+## 🎯 Objetivo
 Mostrar cómo instalar Angular CLI, crear un nuevo proyecto y ejecutarlo en el navegador.
 
 ---
 
-### 🛠️ Pasos
+## 🛠️ Pasos
 
 1. **Instalar Node.js**  
 Descargar e instalar desde [https://nodejs.org](https://nodejs.org)

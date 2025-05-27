@@ -34,7 +34,7 @@ Abre: [http://localhost:4200](http://localhost:4200)
 
 ## 🔁 Navegación
 
-### 🧪 Ejemplo 2 [➡️](./Ejemplo_1.md) 
+### 🧪 Ejemplo 1 [➡️](./Ejemplo_1.md) 
 
 ### 📘 [Volver a Módulo 1](../Modulo_1.md) 
 

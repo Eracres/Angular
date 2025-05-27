@@ -41,6 +41,8 @@ Cambiar mensaje: alert('¡Gracias por hacer clic!');
 
 ### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
 
+### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)

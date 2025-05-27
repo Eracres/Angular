@@ -41,6 +41,8 @@ Cambiar el mensaje del botón
 
 ### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
 
+### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)

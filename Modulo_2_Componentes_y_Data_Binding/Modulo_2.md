@@ -1,12 +1,12 @@
 # 📘 Módulo 2: Componentes y Data Binding en Angular
 
-## 🧩 ¿Qué es el Data Binding?
+## ❓ ¿Qué es el Data Binding?
 
 El **Data Binding** en Angular permite enlazar datos entre el componente (TypeScript) y la vista (HTML). Angular ofrece 4 tipos principales de enlaces:
 
 ---
 
-## 🔗 Tipos de Binding
+## 📄 Tipos de Binding
 
 ### ✅ 1. Interpolación (`{{ variable }}`)
 

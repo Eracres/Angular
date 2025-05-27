@@ -30,7 +30,7 @@ Este componente vincula un checkbox a una variable booleana con `[(ngModel)]` y 
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 3 [➡️](../../Modulo_3_Directivas_Angular/Modulo_3.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 3 [➡️](../../../Modulo_3_Directivas_Angular/Modulo_3.md)
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 

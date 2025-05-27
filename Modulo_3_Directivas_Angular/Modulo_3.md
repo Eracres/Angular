@@ -83,6 +83,6 @@ Aplica estilos CSS directamente desde el componente.
 
 ## 🔁 Navegación
 
-### [⬅️](../Modulo_2_Componentes_y_Data_Binding/Modulo_2.md) Módulo 2 - Módulo 4 [➡️](../Modulo_4_Routing/Modulo_4.md)
+### 📘 - [⬅️](../Modulo_2_Componentes_y_Data_Binding/Modulo_2.md) Módulo 2 - Módulo 4 [➡️](../Modulo_4_Routing/Modulo_4.md)
 
 ### 🏠 [Inicio](../README.md)

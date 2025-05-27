@@ -38,7 +38,7 @@ Mostrar longitud del nombre: `{{ nombre.length }}`
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
+### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 

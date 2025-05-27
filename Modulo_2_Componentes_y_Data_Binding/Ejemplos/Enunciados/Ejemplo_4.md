@@ -40,6 +40,8 @@ Mostrar longitud del nombre: `{{ nombre.length }}`
 
 ### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)
 
+### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)

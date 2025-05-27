@@ -53,7 +53,7 @@ Y úsalo desde el padre:
 
 ## 🔁 Navegación
 
-### 📋 - [⬅️](./Ejemplo_0.md) Ejercicio 0
+### 📋 - [⬅️](./Ejercicio_0.md) Ejercicio 0
 
 ### 🧪 - [Ir a Ejemplos](./Ejemplos_Modulo_1.md)
 

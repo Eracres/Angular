@@ -40,7 +40,7 @@ Concatenar texto: `{{ 'Bienvenido a ' + titulo }}`
 
 ### 🧪 - Ejemplo 2 [➡️](./Ejemplo_2.md)
 
-### 📋 - [Ir a Ejercicios](../../Ejercicios/Enunciados/README.md)
+### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
 

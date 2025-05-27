@@ -1,4 +1,4 @@
-# 📋 Ejercicios del Módulo 2: Componentes y Data Binding
+# 📋 Ejercicios Módulo 2: Componentes y Data Binding
 
 ## 📌 Índice
 

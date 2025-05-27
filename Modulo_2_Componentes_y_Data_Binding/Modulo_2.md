@@ -87,7 +87,7 @@ mostrarInfo() {
 
 ## 📋 Ejercicios propuestos
 
-#### [🔗 Listado de Ejemplos](./Ejercicios/README.md)
+#### [🔗 Listado de Ejercicios](./Ejercicios/README.md)
 
 ---
 

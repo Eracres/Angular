@@ -1,9 +1,9 @@
-# 🧪 Ejemplos del Módulo 2: Componentes y Data Binding
+# 🧪 Ejemplos del Módulo 1: Introducción a Angular
 
 ## 📌 Índice
 
-### 🧪 0. [Property binding](./Enunciados/Ejemplo_0.md)  
-### 🧪 1. [Interpolación básica](./Enunciados/Ejemplo_1.md)
+### 🧪 0. [Instalación y creación del entorno Angular](./Enunciados/Ejemplo_0.md)  
+### 🧪 1. [Componente básico con interpolación](./Enunciados/Ejemplo_1.md)
 
 ---
 

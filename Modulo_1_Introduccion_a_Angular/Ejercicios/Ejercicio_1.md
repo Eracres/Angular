@@ -53,8 +53,10 @@ Y úsalo desde el padre:
 
 ## 🔁 Navegación
 
-### 🧪 [Ver Ejemplos](./Ejemplos_Modulo_1.md)
+### 📋 - [⬅️](./Ejemplo_0.md) Ejercicio 0
 
-### 📘 [Volver a Módulo 1](./Modulo_1.md) 
+### 🧪 - [Ir a Ejemplos](./Ejemplos_Modulo_1.md)
 
-### 🏠 [Inicio](../README.md)
+### 📘 - [Volver a Módulo 1](./Modulo_1.md) 
+
+### 🏠 - [Inicio](../README.md)

@@ -23,7 +23,7 @@ Crear un formulario con campos enlazados mediante `[(ngModel)]`.
 
 ## 🔁 Navegación
 
-### 📋 - Ejercicio 6 [➡️](./Ejercicio_6.md)
+### 📋 - [⬅️](./Ejercicio_4.md) Ejercicio 4 - Ejercicio 6 [➡️](./Ejercicio_6.md)
 
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 

@@ -39,7 +39,7 @@ Cambiar mensaje: alert('¡Gracias por hacer clic!');
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
+### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 

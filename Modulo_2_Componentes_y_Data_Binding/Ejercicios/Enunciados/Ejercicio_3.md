@@ -23,7 +23,7 @@ Practicar el uso de `(click)` para ejecutar una función del componente.
 
 ## 🔁 Navegación
 
-### 📋 - Ejercicio 4 [➡️](./Ejercicio_4.md)
+### 📋 - [⬅️](./Ejercicio_2.md) Ejercicio 2 - Ejercicio 4 [➡️](./Ejercicio_4.md)
 
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 

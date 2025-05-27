@@ -65,13 +65,13 @@ Esto crea los archivos:
 
 ## 🧪 Ejemplos de este módulo
 
-### [📝 Listado de Ejemplos](./Ejemplos/README.md)
+* [📝 Listado de Ejemplos](./Ejemplos/README.md)
 
 ---
 
 ## 📋 Ejercicios propuestos
 
-### [📝 Listado de Ejercicios](./Ejercicios/README.md)
+* [📝 Listado de Ejercicios](./Ejercicios/README.md)
 
 ---
 

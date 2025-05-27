@@ -1,6 +1,6 @@
-## 🧪 Ejemplo 1: Componente básico con interpolación
+# 🧪 Ejemplo 1: Componente básico con interpolación
 
-### `saludo.component.ts`
+## `saludo.component.ts`
 ```ts
 import { Component } from '@angular/core';
 
@@ -14,12 +14,12 @@ export class SaludoComponent {
 }
 ```
 
-### `saludo.component.html`
+## `saludo.component.html`
 ```html
 <h2>Hola, {{ nombre }} 👋</h2>
 ```
 
-### ✅ ¿Qué hace este componente?
+## ✅ ¿Qué hace este componente?
 Este componente muestra un mensaje dinámico utilizando **interpolación**: el valor de la variable `nombre` se inserta directamente en el HTML.
 
 ---

@@ -15,7 +15,7 @@
 
 ### 📋 - [Ir a Ejercicios](../Ejercicios/README.md)
 
-### 📘 - [Volver a Módulo 1](../Modulo_2.md)
+### 📘 - [Volver a Módulo 2](../Modulo_2.md)
 
 ### 🏠 - [Inicio](../../../README.md)
 

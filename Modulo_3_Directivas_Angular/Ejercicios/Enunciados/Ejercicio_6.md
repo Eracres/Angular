@@ -1,3 +1,26 @@
+# 📋 Ejercicio 6: Combinar directivas en un componente
+
+## 🎯 Objetivo
+Crear un componente que combine `*ngIf`, `*ngFor`, `ngClass` y `ngStyle`.
+
+---
+
+## 📝 Instrucciones
+1. Crea un array `colores = ['rojo', 'verde', 'azul'];`
+
+2. Muestra la lista solo si `mostrar: boolean = true`
+
+3. Aplica clase y estilo dinámico a cada ítem
+
+4. Agrega un botón para alternar `mostrar`
+
+---
+
+## ✅ Criterios de evaluación
+- Se combinan correctamente varias directivas
+- La lógica funciona y se refleja en la vista
+- No hay errores de compilación
+
 ---
 
 ## 🔁 Navegación

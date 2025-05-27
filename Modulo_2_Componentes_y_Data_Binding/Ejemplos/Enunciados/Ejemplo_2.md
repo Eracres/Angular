@@ -37,7 +37,7 @@ imagenUrl = 'https://picsum.photos/200';
 
 ### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
 
-### 📋 - [Ir a Ejercicios](../../Ejercicios/Enunciados/README.md)
+### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
 

@@ -49,6 +49,8 @@ http://localhost:4200
 
 ### 📋 - Ejercicio 1 [➡️](./Ejercicio_1.md)
 
+### 📋 - [Volver a Ejercicios](../README.md)
+
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 
 ### 📘 - [Volver a Módulo 1](../../Modulo_1.md) 

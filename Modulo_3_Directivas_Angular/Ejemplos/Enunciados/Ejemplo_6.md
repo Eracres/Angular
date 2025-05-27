@@ -40,7 +40,7 @@ Alternar visibilidad con botón
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 4 [➡️](../../../Modulo_4_/Modulo_4.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 4 [➡️](../../../Modulo_4_Routing/Modulo_4.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

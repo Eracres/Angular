@@ -22,7 +22,7 @@ Aplicar formularios template-driven y validaciones en Angular.
 
 ## 🔁 Navegación
 
-### 📋 - [⬅️](./Ejercicio_5.md) Ejercicio 5 - Módulo 6 [➡️](../../../Modulo_6_Formularios/Modulo_6.md)
+### 📋 - [⬅️](./Ejercicio_5.md) Ejercicio 5 - Módulo 7 [➡️](../../../Modulo_6_Formularios/Modulo_7.md)
 
 ### 📋 - [Volver a Ejercicios](../README.md)
 

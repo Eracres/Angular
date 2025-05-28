@@ -109,6 +109,6 @@ También puedes mostrar mensajes de error con condiciones:
 
 ## 🔁 Navegación
 
-### [⬅️](../Modulo_5_Servicios_y_Comunicación/Modulo_5.md) Módulo 5 - Módulo 7 [➡️](../Modulo_7/Modulo_7.md)
+### [⬅️](../Modulo_5_Servicios_y_Comunicación/Modulo_5.md) Módulo 5 - Módulo 7 [➡️](../Modulo_7_Consumo_de_APIs_con_HttpClient/Modulo_7.md)
 
 ### 🏠 [Inicio](../README.md)

@@ -54,8 +54,7 @@ Mostrar nombre del usuario logueado
 ---
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 6 [➡️](../../../Modulo_6_Formularios_y_Validaciones
-/Modulo_6.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 6 [➡️](../../../Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

@@ -1,4 +1,4 @@
-# 🧪 Ejemplo 1: Título descriptivo del ejemplo 1
+# 🧪 Ejemplo 1: Formulario con ngModel
 
 ## `formulario.component.ts`
 ```ts

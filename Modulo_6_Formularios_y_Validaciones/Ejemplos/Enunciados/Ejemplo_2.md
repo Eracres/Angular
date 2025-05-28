@@ -1,4 +1,4 @@
-# 🧪 Ejemplo 2: Título descriptivo del ejemplo 2
+# 🧪 Ejemplo 2: Formulario con validación required
 
 ## `formulario.component.ts`
 ```ts

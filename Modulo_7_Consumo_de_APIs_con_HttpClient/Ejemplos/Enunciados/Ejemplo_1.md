@@ -1,37 +1,48 @@
-# 🧪 Ejemplo 5: [Título del ejemplo 5]
+# 🧪 Ejemplo 1: Importación de HttpClientModule
 
-## `archivo.component.ts`
+## `app.module.ts`
 ```ts
-// Código TypeScript del ejemplo 5
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
-## `archivo.component.html`
-```html
-<!-- HTML del ejemplo 5 -->
-```
-
-## ✅ ¿Qué hace este componente?
-Explicación clara y breve de lo que realiza el ejemplo 5.
+## ✅ ¿Qué hace este ejemplo?
+Este ejemplo demuestra cómo importar `HttpClientModule` en el módulo principal de Angular para poder usar servicios HTTP en la aplicación.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Concepto 1 del ejemplo 5
-- Concepto 2 del ejemplo 5
+- Importación de módulos en Angular
+- Activación de `HttpClient` a nivel global
+- Configuración base para consumo de APIs
 
 ---
 
 ## 💡 Variaciones sugeridas
 
 ```ts
-// Posible variación de código
+// Importar HttpClientModule en un módulo específico en vez del AppModule
+```
+
+```ts
+// Usar HttpClientModule en combinación con interceptores
 ```
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
+### 🧪 - Ejemplo 2 [➡️](./Ejemplo_2.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 
@@ -40,4 +51,3 @@ Explicación clara y breve de lo que realiza el ejemplo 5.
 ### 📘 - [Volver a Módulo 7](../../Modulo_7.md)
 
 ### 🏠 - [Inicio](../../../README.md)
-

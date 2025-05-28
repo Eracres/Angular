@@ -1,4 +1,4 @@
-# 🧪 Ejemplo 3:Servicio compartido entre componentes
+# 🧪 Ejemplo 3: Servicio compartido entre componentes
 
 ## `contador.service.ts`
 ```ts

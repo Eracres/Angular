@@ -1,4 +1,4 @@
-# 📋 Ejercicio Crear servicio de productos
+# 📋 Ejercicio 1: Crear servicio de productos
 
 ## 🎯 Objetivo
 Practicar la creación de un servicio con un arreglo de datos y una función que lo devuelva.

@@ -23,7 +23,7 @@ Crear un servicio que se pueda usar en varios componentes para compartir estado.
 
 ## 🔁 Navegación
 
-### 📋 - [⬅️](./Ejercicio_2.md) Ejercicio 2 - Ejercicio 4 [➡️](./Ejercicio_4.md)
+### 📋 - [⬅️](./Ejercicio_3.md) Ejercicio 3 - Ejercicio 5 [➡️](./Ejercicio_5.md)
 
 ### 📋 - [Volver a Ejercicios](../README.md)
 

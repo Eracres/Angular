@@ -1,4 +1,4 @@
-# 🧪 Inyección de servicio en componente
+# 🧪 Ejemplo 2: Inyección de servicio en componente
 
 ## `productos.component.ts`
 ```ts

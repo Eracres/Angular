@@ -76,15 +76,6 @@ import { TokenInterceptor } from './token.interceptor';
 export class AppModule {}
 ```
 
-
-```ts
-// Importar HttpClientModule en un módulo específico en vez del AppModule
-```
-
-```ts
-// Usar HttpClientModule en combinación con interceptores
-```
-
 ---
 
 ## 🔁 Navegación

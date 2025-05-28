@@ -113,7 +113,7 @@ Esto permite que varios componentes consulten o modifiquen el mismo estado centr
 
 ## 🔁 Navegación
 
-### [⬅️](../Modulo_4_Routing/Modulo_4.md) Módulo 4 - Módulo 6 [➡️](../Modulo_6/Modulo_6.md)
+### [⬅️](../Modulo_4_Routing/Modulo_4.md) Módulo 4 - Módulo 6 [➡️](../Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
 
 ### 🏠 [Inicio](../README.md)
 

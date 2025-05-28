@@ -68,7 +68,7 @@ validarFormulario() {
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Módulo 7 [➡️](../../../Modulo_7/Modulo_7.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Módulo 7 [➡️](../../../Modulo_7_Consumo_de_APIs_con_HttpClient/Modulo_7.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

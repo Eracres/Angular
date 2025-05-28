@@ -1,4 +1,4 @@
-# 🧪 Ejemplo 2: Uso de <router-outlet>
+# 🧪 Ejemplo 2: Uso de "<router-outlet>"
 
 ## `app.component.ts`
 ```ts

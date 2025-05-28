@@ -28,14 +28,52 @@ Este ejemplo demuestra cómo importar `HttpClientModule` en el módulo principal
 
 ---
 
+
 ## 💡 Variaciones sugeridas
 
+### 🔹 Importar `HttpClientModule` en un módulo secundario
+
 ```ts
-// Importar HttpClientModule en un módulo específico en vez del AppModule
+// user.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [CommonModule, HttpClientModule]
+})
+export class UserModule {}
+```
+
+### 🔹 Añadir un interceptor HTTP para token de autenticación
+
+```ts
+// token.interceptor.ts
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http';
+
+@Injectable()
+export class TokenInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    const tokenizedReq = req.clone({
+      setHeaders: { Authorization: `Bearer TU_TOKEN` }
+    });
+    return next.handle(tokenizedReq);
+  }
+}
 ```
 
 ```ts
-// Usar HttpClientModule en combinación con interceptores
+// app.module.ts
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './token.interceptor';
+
+@NgModule({
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ]
+})
+export class AppModule {}
 ```
 
 ---
@@ -51,4 +89,5 @@ Este ejemplo demuestra cómo importar `HttpClientModule` en el módulo principal
 ### 📘 - [Volver a Módulo 7](../../Modulo_7.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+
 

@@ -44,9 +44,13 @@ Este componente demuestra cómo usar formularios template-driven en Angular.
 
 ## 🔁 Navegación
 
-### 🧪 - Ejemplo 4 [➡️](./Ejemplo_4.md)
+### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
+
 ### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
+
 ### 📘 - [Volver a Módulo 6](../../Modulo_6.md)
+
 ### 🏠 - [Inicio](../../../README.md)
 

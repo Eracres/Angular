@@ -1,4 +1,4 @@
-# 📋 Ejercicio Servicio de mensajes global
+# 📋 Ejercicio 5: Servicio de mensajes global
 
 ## 🎯 Objetivo
 Implementar un servicio que actúe como bandeja de mensajes centralizada.

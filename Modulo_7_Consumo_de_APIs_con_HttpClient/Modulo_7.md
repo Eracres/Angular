@@ -145,6 +145,6 @@ getUsuarios(): Observable<any> {
 
 ## 🔁 Navegación
 
-### [⬅️](../Modulo_6_Formularios/Modulo_6.md) Módulo 6 - Módulo 8 [➡️](../Modulo_8/Modulo_8.md)
+### [⬅️](../Modulo_6_Formularios_y_Validaciones/Modulo_6.md) Módulo 6 - Módulo 8 [➡️](../Modulo_8/Modulo_8.md)
 
 ### 🏠 [Inicio](../README.md)

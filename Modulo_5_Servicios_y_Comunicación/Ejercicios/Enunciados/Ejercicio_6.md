@@ -23,7 +23,7 @@ Simular una lógica de login centralizado mediante un servicio.
 
 ## 🔁 Navegación
 
-### 📋 -  [⬅️](./Ejercicio_5.md) Ejercicio 5 - Modulo 5 [➡️](../../../Modulo_6/Modulo_6.md)
+### 📋 -  [⬅️](./Ejercicio_5.md) Ejercicio 5 - Modulo 5 [➡️](../../../Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
 
 ### 📋 - [Volver a Ejercicios](../README.md)
 

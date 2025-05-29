@@ -1,78 +1,75 @@
-# 🧪 Ejemplo 3: *ngSwitch – Condición múltiple
+# 🧪 Ejemplo 3: Event binding
 
 ## 🎯 Objetivo
-Utilizar la directiva `*ngSwitch` para mostrar distintos bloques de contenido en función del valor de una variable.
+Mostrar cómo capturar eventos del DOM (como clics) y ejecutar funciones del componente con `()`
 
-## 📁 Ruta: src/app/switch/switch.component.ts
+## 📁 Ruta: src/app/boton/boton.component.ts
 ```ts
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-switch',
-  templateUrl: './switch.component.html'
+  selector: 'app-boton',
+  templateUrl: './boton.component.html'
 })
-export class SwitchComponent {
-  nivel = 2;
+export class BotonComponent {
+  contador: number = 0;
+
+  incrementar() {
+    this.contador++;
+  }
 }
 ```
 
-## 📁 Ruta: src/app/switch/switch.component.html
+## 📁 Ruta: src/app/boton/boton.component.html
 ```html
-<div [ngSwitch]="nivel">
-  <p *ngSwitchCase="1">Nivel uno</p>
-  <p *ngSwitchCase="2">Nivel dos</p>
-  <p *ngSwitchDefault>Nivel desconocido</p>
-</div>
+<button (click)="incrementar()">Haz clic</button>
+<p>Has hecho clic {{ contador }} veces</p>
 ```
 
 ---
 
 ## ✅ ¿Qué hace este componente?
 
-Este componente muestra cómo usar la directiva `*ngSwitch` para evaluar una variable (`nivel`) y mostrar diferentes bloques HTML dependiendo de su valor.
-
-- Si `nivel` es 1, se muestra "Nivel uno".
-- Si `nivel` es 2, se muestra "Nivel dos".
-- Si `nivel` no coincide con ninguno de los casos anteriores, se muestra "Nivel desconocido".
-
-Esto permite condicionar múltiples posibilidades sin necesidad de múltiples `*ngIf`.
+Este ejemplo muestra cómo manejar eventos desde la vista, usando `event binding` con `()` para escuchar el evento `click`.  
+Cada vez que el usuario hace clic en el botón, se ejecuta el método `incrementar()` del componente y se actualiza la vista automáticamente.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Directiva `ngSwitch`
-- Directivas auxiliares `*ngSwitchCase` y `*ngSwitchDefault`
-- Evaluación condicional múltiple en plantillas Angular
-- Limpieza estructural del HTML
+- Event binding con paréntesis `( )`
+- Manejo de eventos del usuario
+- Actualización de valores del componente
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Cambiar el valor de `nivel` a 1 o 3
-```ts
-nivel = 1; // Mostrará "Nivel uno"
-nivel = 3; // Mostrará "Nivel desconocido"
+### ✅ 1. Restablecer el contador
+
+```html
+<button (click)="contador = 0">Resetear</button>
 ```
-📌 **¿Por qué?**: Puedes probar cómo reacciona la interfaz a distintos valores del modelo.
+
+📌 **¿Por qué?**: Permite ofrecer al usuario más control en la interfaz.
 
 ---
 
-### ✅ 2. Reemplazar `<p>` por componentes completos
+### ✅ 2. Mostrar mensaje al llegar a un número
+
 ```html
-<app-nivel1 *ngSwitchCase="1"></app-nivel1>
-<app-nivel2 *ngSwitchCase="2"></app-nivel2>
+<p *ngIf="contador >= 5">¡Has alcanzado 5 clics!</p>
 ```
-📌 **¿Por qué?**: Permite cargar componentes completos según el contexto lógico.
+
+📌 **¿Por qué?**: Mejora la experiencia de usuario mediante retroalimentación visual.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Declara el componente `SwitchComponent` en el módulo.
-2. Usa su selector (`<app-switch>`) en una vista para visualizarlo.
-3. Cambia el valor de `nivel` y verifica cómo cambia el contenido renderizado.
+1. Asegúrate de importar y declarar el componente en el módulo.
+2. Usa el selector `<app-boton>` en tu plantilla.
+3. Haz clic en el botón y observa cómo cambia el contador.
 
 ---
 
@@ -84,7 +81,7 @@ nivel = 3; // Mostrará "Nivel desconocido"
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
-### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
+### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
 
 ### 🏠 - [Inicio](../../../README.md)
 

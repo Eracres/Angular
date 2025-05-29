@@ -1,46 +1,57 @@
 # 🧪 Ejemplo 2: Property binding
 
-## `app.component.ts`
+## 🎯 Objetivo
+Entender cómo enlazar propiedades de elementos HTML con propiedades del componente usando `[property]`.
+
+## 📁 Ruta: src/app/app.component.ts
 ```ts
 export class AppComponent {
-  imagenUrl = 'https://via.placeholder.com/150';
+  imagenUrl: string = 'https://via.placeholder.com/150';
 }
 ```
 
-## `app.component.html`
+## 📁 Ruta: src/app/app.component.html
 ```html
-<img [src]="imagenUrl" alt="Imagen dinámica" />
+<img [src]="imagenUrl" alt="Imagen dinámica">
 ```
 
-## ✅ ¿Qué hace este componente?
-Este componente usa **property binding** para asignar dinámicamente una URL al atributo `src` de la imagen.
+---
+
+## ✅ ¿Qué hace este ejemplo?
+Este ejemplo demuestra cómo usar **property binding** para asignar dinámicamente valores a atributos HTML desde el componente.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Binding de atributos con `[]`
-- Enlace unidireccional desde componente a vista
+
+- Property binding con `[atributo]`
+- Comunicación del componente con la vista
+- Renderizado dinámico de atributos
 
 ---
 
 ## 💡 Variaciones sugeridas
-```ts
-imagenUrl = 'https://picsum.photos/200';
+
+### ✅ Mostrar una segunda imagen si falla la primera
+```html
+<img [src]="imagenUrl || 'assets/imagen-default.jpg'">
 ```
-```ts
-<img [alt]="'Imagen de ' + imagenUrl" />
-```
+
+📌 ¿Por qué?: Puedes manejar condiciones o valores alternativos desde la vista.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Asegúrate de que `imagenUrl` contiene una URL válida.
+2. Si cambias su valor, la imagen debe actualizarse automáticamente en el navegador.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
-
 ### 🏠 - [Inicio](../../../README.md)

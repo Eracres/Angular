@@ -1,65 +1,97 @@
 # 🧪 Ejemplo 5: Mostrar errores condicionales
 
-## `formulario.component.ts`
+## 🎯 Objetivo
+Controlar cuándo se muestran los errores de validación en el formulario, para mejorar la experiencia de usuario.
+
+## 📁 Ruta: src/app/errores/errores.component.ts
 ```ts
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
+  selector: 'app-errores',
+  templateUrl: './errores.component.html'
 })
-export class FormularioComponent {
-  email: string = '';
+export class ErroresComponent {
+  miFormulario: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.miFormulario = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+  campoNoValido(campo: string): boolean {
+    const control = this.miFormulario.get(campo);
+    return control?.invalid && control?.touched || false;
+  }
 }
 ```
 
-## `formulario.component.html`
+## 📁 Ruta: src/app/errores/errores.component.html
 ```html
-<form>
-  <label>Email:</label>
-  <input type="email" [(ngModel)]="email" name="email" required #emailInput="ngModel">
-  <div *ngIf="emailInput.invalid && emailInput.touched">
-    <small *ngIf="emailInput.errors?.['required']">El email es obligatorio.</small>
-    <small *ngIf="emailInput.errors?.['email']">Formato inválido.</small>
+<form [formGroup]="miFormulario" (ngSubmit)="miFormulario.markAllAsTouched()">
+  <label for="email">Correo electrónico:</label>
+  <input id="email" formControlName="email" />
+  <div *ngIf="campoNoValido('email')">
+    El correo es obligatorio y debe tener un formato válido.
   </div>
+  <button type="submit">Validar</button>
 </form>
 ```
 
+---
+
 ## ✅ ¿Qué hace este componente?
-Este formulario muestra mensajes de error condicionales cuando el campo de email está vacío o mal escrito y ha sido tocado.
+
+Este ejemplo muestra cómo condicionar la visualización de los errores solo si el campo fue tocado (`touched`).  
+Esto evita mostrar errores desde el inicio y mejora la interacción del usuario con el formulario.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- `[(ngModel)]` y `name`
-- Validación con `required` y `email`
-- Directivas estructurales `*ngIf`
-- Template reference variables (`#var`)
+
+- `touched` para saber si el campo fue manipulado
+- Función de utilidad para evaluación de errores
+- `markAllAsTouched()` al enviar el formulario
 
 ---
 
 ## 💡 Variaciones sugeridas
 
+### ✅ 1. Mostrar errores solo después de intentar enviar
+```ts
+(submit logic) => form.markAllAsTouched()
+```
+📌 **¿Por qué?**: Previene mostrar errores antes de que el usuario interactúe.
+
+### ✅ 2. Personalizar los mensajes según el tipo de error
 ```html
-<!-- Añadir validación personalizada -->
-<input pattern="[a-z]+@[a-z]+\.[a-z]{2,3}" />
+<div *ngIf="campoNoValido('email')">
+  <ng-container *ngIf="miFormulario.get('email')?.errors?.['required']">
+    El campo es obligatorio.
+  </ng-container>
+  <ng-container *ngIf="miFormulario.get('email')?.errors?.['email']">
+    Debe tener formato válido.
+  </ng-container>
+</div>
 ```
 
-```html
-<!-- Estilos de error con clases CSS -->
-<div [class.error]="emailInput.invalid">...</div>
-```
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Haz clic en “Validar” sin llenar el campo.
+2. El mensaje debe aparecer solo si el campo fue tocado.
+3. Rellena el campo correctamente y verifica que el mensaje desaparece.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
 ### 📘 - [Volver a Módulo 6](../../Modulo_6.md)
-
 ### 🏠 - [Inicio](../../../README.md)
+

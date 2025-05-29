@@ -1,67 +1,77 @@
-# 🧪 Ejemplo 5: Binding combinado
+# 🧪 Ejemplo 4: Two-way binding con ngModel
 
 ## 🎯 Objetivo
-Practicar la combinación de interpolación y event binding para mostrar y manipular datos desde la plantilla HTML.
+Mostrar cómo enlazar una variable bidireccionalmente entre el componente y la vista usando `[(ngModel)]`.
 
-## 📁 Ruta: src/app/app.component.ts
-
+## 📁 Ruta: src/app/formulario/formulario.component.ts
 ```ts
-export class AppComponent {
-  producto = 'Laptop Gamer';
-  precio = 1500;
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-formulario',
+  templateUrl: './formulario.component.html'
+})
+export class FormularioComponent {
+  nombre: string = '';
 }
 ```
 
-## 📁 Ruta: src/app/app.component.html
-
+## 📁 Ruta: src/app/formulario/formulario.component.html
 ```html
-<h2>{{ producto }}</h2>
-<p>Precio: ${{ precio }}</p>
-<button (click)="alert('Producto: ' + producto)">Ver</button>
+<input [(ngModel)]="nombre" placeholder="Escribe tu nombre">
+<p>Hola, {{ nombre }}!</p>
 ```
 
 ---
 
 ## ✅ ¿Qué hace este componente?
 
-Este componente combina dos técnicas fundamentales de Angular:  
-- **Interpolación** para mostrar datos dinámicos como el nombre del producto y su precio.  
-- **Event binding** para responder a eventos del usuario, como el clic en un botón.
+Este ejemplo utiliza `[(ngModel)]` para crear un enlace bidireccional entre el input y la variable del componente.  
+Cada vez que el usuario escribe en el campo, el valor de `nombre` se actualiza automáticamente y se refleja en el DOM.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Interpolación con `{{ }}`
-- Enlace de eventos con `(click)`
-- Manipulación de eventos desde la vista
+- Two-way data binding
+- Uso de `FormsModule` (requisito para `ngModel`)
+- Enlace en tiempo real entre datos y vista
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Agregar más propiedades
+### ✅ 1. Mostrar un mensaje de bienvenida condicional
 
-```ts
-stock = 10;
-marca = 'Asus';
+```html
+<p *ngIf="nombre">¡Bienvenido, {{ nombre }}!</p>
 ```
-📌 **¿Por qué?**: Para representar más detalles del producto.
+
+📌 **¿Por qué?**: Aporta una mejor experiencia mostrando información solo cuando hay datos.
 
 ---
 
-### ✅ 2. Cambiar el mensaje del botón
+### ✅ 2. Limpiar el campo con un botón
 
 ```html
-<button (click)="alert('Has elegido: ' + producto)">Seleccionar</button>
+<button (click)="nombre = ''">Limpiar</button>
 ```
-📌 **¿Por qué?**: Para personalizar la interacción con el usuario.
+
+📌 **¿Por qué?**: Mejora la usabilidad permitiendo reiniciar el formulario fácilmente.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Asegúrate de importar `FormsModule` en el `AppModule`.
+2. Usa el selector `<app-formulario>` y escribe en el input.
+3. Verifica que el texto en pantalla se actualiza conforme se escribe.
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
+### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 
@@ -70,3 +80,4 @@ marca = 'Asus';
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+

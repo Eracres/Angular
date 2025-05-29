@@ -34,8 +34,8 @@ Sin esta importación, **no se pueden consumir APIs REST** en Angular.
 
 ## 🧠 Conceptos aplicados
 
-- Importación de módulos externos en Angular
-- Habilitación del cliente HTTP de Angular (`HttpClient`)
+- Importación de módulos externos en Angular  
+- Habilitación del cliente HTTP de Angular (`HttpClient`)  
 - Estructura del `AppModule` y su función de configuración
 
 ---
@@ -44,10 +44,9 @@ Sin esta importación, **no se pueden consumir APIs REST** en Angular.
 
 ### ✅ 1. Importar `HttpClientModule` en un módulo de características
 
-📁 Ruta: src/app/otro-modulo/otro-modulo.module.ts
+📁 Ruta: `src/app/otro-modulo/otro-modulo.module.ts`
 
 ```ts
-// Si tienes un módulo exclusivo para usuarios
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -61,7 +60,7 @@ export class UsuarioModule { }
 
 ### ✅ 2. Usar `HttpClientModule` junto a interceptores HTTP
 
-📁 Ruta: src/app/interceptors/auth.interceptor.ts
+📁 Ruta: `src/app/interceptors/auth.interceptor.ts`
 
 ```ts
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -79,6 +78,42 @@ import { MiInterceptor } from './interceptores/mi-interceptor';
 export class AppModule { }
 ```
 📌 **¿Por qué?**: Los interceptores permiten modificar todas las peticiones o respuestas HTTP (por ejemplo, para agregar tokens JWT o manejar errores globalmente).
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+Sigue estos pasos para asegurarte de que el ejemplo está implementado correctamente:
+
+1. **Revisa la consola del navegador:**
+   - No deben aparecer errores como:
+     ```
+     NullInjectorError: No provider for HttpClient!
+     ```
+2. **Ejecuta el proyecto con `ng serve`**
+   - Accede a `http://localhost:4200`
+   - Si todo está correcto, la app carga sin errores.
+
+3. **Probar HttpClient (opcional):**
+
+📁 Ruta: `src/app/prueba-http.service.ts`
+
+```ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PruebaHttpService {
+  constructor(private http: HttpClient) {
+    this.http.get('https://jsonplaceholder.typicode.com/posts')
+      .subscribe(data => console.log('✅ Datos recibidos:', data));
+  }
+}
+```
+
+📌 Inyecta este servicio en `app.component.ts` para probar que la petición se realiza correctamente.
 
 ---
 

@@ -1,57 +1,96 @@
-# 🧪 Ejemplo 2: Property binding
+# 🧪 Ejemplo 2: *ngFor – Listado de elementos
 
 ## 🎯 Objetivo
-Entender cómo enlazar propiedades de elementos HTML con propiedades del componente usando `[property]`.
+Utilizar la directiva `*ngFor` para iterar sobre una lista de elementos y renderizarlos dinámicamente en la plantilla.
 
-## 📁 Ruta: src/app/app.component.ts
+## 📁 Ruta: src/app/lista/lista.component.ts
 ```ts
-export class AppComponent {
-  imagenUrl: string = 'https://via.placeholder.com/150';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-lista',
+  templateUrl: './lista.component.html'
+})
+export class ListaComponent {
+  frutas = ['Manzana', 'Banana', 'Naranja'];
 }
 ```
 
-## 📁 Ruta: src/app/app.component.html
+## 📁 Ruta: src/app/lista/lista.component.html
 ```html
-<img [src]="imagenUrl" alt="Imagen dinámica">
+<ul>
+  <li *ngFor="let fruta of frutas">{{ fruta }}</li>
+</ul>
 ```
 
 ---
 
-## ✅ ¿Qué hace este ejemplo?
-Este ejemplo demuestra cómo usar **property binding** para asignar dinámicamente valores a atributos HTML desde el componente.
+## ✅ ¿Qué hace este componente?
+
+Este ejemplo muestra cómo usar la directiva estructural `*ngFor` para generar una lista dinámica.  
+Cada elemento del array `frutas` se imprime como un ítem (`<li>`) dentro del HTML.  
+Esto es útil cuando se trabaja con datos dinámicos que necesitan ser renderizados en tiempo real, como resultados de una API.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Property binding con `[atributo]`
-- Comunicación del componente con la vista
-- Renderizado dinámico de atributos
+- Directiva estructural `*ngFor`
+- Iteración sobre arreglos en plantillas Angular
+- Interpolación de valores dinámicos
+- Separación de lógica (componente) y vista (plantilla)
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ Mostrar una segunda imagen si falla la primera
+### ✅ 1. Mostrar el índice junto a cada elemento
+
 ```html
-<img [src]="imagenUrl || 'assets/imagen-default.jpg'">
+<li *ngFor="let fruta of frutas; let i = index">{{ i + 1 }}. {{ fruta }}</li>
 ```
 
-📌 ¿Por qué?: Puedes manejar condiciones o valores alternativos desde la vista.
+📌 **¿Por qué?**: Útil para numerar ítems o mantener referencia al índice actual.
+
+---
+
+### ✅ 2. Iterar sobre un array de objetos
+
+```ts
+frutas = [
+  { nombre: 'Manzana', color: 'Rojo' },
+  { nombre: 'Banana', color: 'Amarillo' },
+  { nombre: 'Naranja', color: 'Naranja' }
+];
+```
+
+```html
+<li *ngFor="let fruta of frutas">
+  {{ fruta.nombre }} - {{ fruta.color }}
+</li>
+```
+
+📌 **¿Por qué?**: Muestra cómo manejar estructuras de datos más complejas.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Asegúrate de que `imagenUrl` contiene una URL válida.
-2. Si cambias su valor, la imagen debe actualizarse automáticamente en el navegador.
+1. Asegúrate de que el componente esté declarado en el módulo.
+2. Visualiza el componente en la app usando su selector (`<app-lista>`).
+3. Prueba agregar o quitar elementos del array y verifica que la lista se actualiza dinámicamente.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
+
 ### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
+
+### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
+
 ### 🏠 - [Inicio](../../../README.md)
+

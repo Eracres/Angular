@@ -1,80 +1,84 @@
 # 🧪 Ejemplo 1: Importación de HttpClientModule
 
-## `app.module.ts`
+## 📁 Ruta: src/app/app.module.ts
+
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule // Importación clave para trabajar con APIs
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
 
+---
+
 ## ✅ ¿Qué hace este ejemplo?
-Este ejemplo demuestra cómo importar `HttpClientModule` en el módulo principal de Angular para poder usar servicios HTTP en la aplicación.
+
+Este ejemplo muestra cómo **habilitar el módulo `HttpClientModule`** de Angular para poder hacer peticiones HTTP.  
+Sin esta importación, **no se pueden consumir APIs REST** en Angular.
+
+- Angular no activa el servicio `HttpClient` por defecto, por lo que **es obligatorio importar** `HttpClientModule` dentro del `@NgModule` principal (normalmente en `app.module.ts`).
+- Una vez hecho esto, cualquier servicio de la aplicación podrá inyectar `HttpClient` y usarlo para peticiones GET, POST, PUT, DELETE, etc.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Importación de módulos en Angular
-- Activación de `HttpClient` a nivel global
-- Configuración base para consumo de APIs
+
+- Importación de módulos externos en Angular
+- Habilitación del cliente HTTP de Angular (`HttpClient`)
+- Estructura del `AppModule` y su función de configuración
 
 ---
 
-
 ## 💡 Variaciones sugeridas
 
-### 🔹 Importar `HttpClientModule` en un módulo secundario
+### ✅ 1. Importar `HttpClientModule` en un módulo de características
+
+📁 Ruta: src/app/otro-modulo/otro-modulo.module.ts
 
 ```ts
-// user.module.ts
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// Si tienes un módulo exclusivo para usuarios
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule]
+  imports: [HttpClientModule]
 })
-export class UserModule {}
+export class UsuarioModule { }
 ```
+📌 **¿Por qué?**: Ideal para mantener el proyecto modularizado. Solo cargas `HttpClient` donde se necesita.
 
-### 🔹 Añadir un interceptor HTTP para token de autenticación
+---
+
+### ✅ 2. Usar `HttpClientModule` junto a interceptores HTTP
+
+📁 Ruta: src/app/interceptors/auth.interceptor.ts
 
 ```ts
-// token.interceptor.ts
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http';
-
-@Injectable()
-export class TokenInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const tokenizedReq = req.clone({
-      setHeaders: { Authorization: `Bearer TU_TOKEN` }
-    });
-    return next.handle(tokenizedReq);
-  }
-}
-```
-
-```ts
-// app.module.ts
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './token.interceptor';
+import { MiInterceptor } from './interceptores/mi-interceptor';
 
 @NgModule({
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MiInterceptor,
+      multi: true
+    }
   ]
 })
-export class AppModule {}
+export class AppModule { }
 ```
+📌 **¿Por qué?**: Los interceptores permiten modificar todas las peticiones o respuestas HTTP (por ejemplo, para agregar tokens JWT o manejar errores globalmente).
 
 ---
 

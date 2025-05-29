@@ -1,84 +1,78 @@
-# 🧪 Ejemplo 2: *ngFor – Listado de elementos
+# 🧪 Ejemplo 2: Property binding
 
 ## 🎯 Objetivo
-Utilizar la directiva `*ngFor` para iterar sobre una lista de elementos y renderizarlos dinámicamente en la plantilla.
+Mostrar cómo enlazar propiedades de elementos HTML con variables del componente utilizando `[property]`.
 
-## 📁 Ruta: src/app/lista/lista.component.ts
+## 📁 Ruta: src/app/imagen/imagen.component.ts
 ```ts
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-lista',
-  templateUrl: './lista.component.html'
+  selector: 'app-imagen',
+  templateUrl: './imagen.component.html'
 })
-export class ListaComponent {
-  frutas = ['Manzana', 'Banana', 'Naranja'];
+export class ImagenComponent {
+  urlImagen: string = 'https://angular.io/assets/images/logos/angular/angular.png';
+  descripcion: string = 'Logo de Angular';
 }
 ```
 
-## 📁 Ruta: src/app/lista/lista.component.html
+## 📁 Ruta: src/app/imagen/imagen.component.html
 ```html
-<ul>
-  <li *ngFor="let fruta of frutas">{{ fruta }}</li>
-</ul>
+<img [src]="urlImagen" [alt]="descripcion" width="150">
 ```
 
 ---
 
 ## ✅ ¿Qué hace este componente?
 
-Este ejemplo muestra cómo usar la directiva estructural `*ngFor` para generar una lista dinámica.  
-Cada elemento del array `frutas` se imprime como un ítem (`<li>`) dentro del HTML.  
-Esto es útil cuando se trabaja con datos dinámicos que necesitan ser renderizados en tiempo real, como resultados de una API.
+Este componente utiliza **property binding** para asignar dinámicamente valores a atributos HTML (`src`, `alt`, etc.).  
+Esto permite que el contenido visual se actualice automáticamente si cambian los valores del componente.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Directiva estructural `*ngFor`
-- Iteración sobre arreglos en plantillas Angular
-- Interpolación de valores dinámicos
-- Separación de lógica (componente) y vista (plantilla)
+- Property binding con corchetes `[ ]`
+- Enlace unidireccional desde el componente al DOM
+- Uso de variables para modificar atributos HTML
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Mostrar el índice junto a cada elemento
+### ✅ 1. Cambiar la imagen desde el componente
 
-```html
-<li *ngFor="let fruta of frutas; let i = index">{{ i + 1 }}. {{ fruta }}</li>
+```ts
+urlImagen = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg';
 ```
 
-📌 **¿Por qué?**: Útil para numerar ítems o mantener referencia al índice actual.
+📌 **¿Por qué?**: Permite hacer componentes reutilizables con distintas fuentes dinámicas.
 
 ---
 
-### ✅ 2. Iterar sobre un array de objetos
+### ✅ 2. Mostrar múltiples imágenes con *ngFor
 
 ```ts
-frutas = [
-  { nombre: 'Manzana', color: 'Rojo' },
-  { nombre: 'Banana', color: 'Amarillo' },
-  { nombre: 'Naranja', color: 'Naranja' }
+imagenes = [
+  { src: 'img1.jpg', alt: 'Imagen 1' },
+  { src: 'img2.jpg', alt: 'Imagen 2' }
 ];
 ```
 
 ```html
-<li *ngFor="let fruta of frutas">
-  {{ fruta.nombre }} - {{ fruta.color }}
-</li>
+<img *ngFor="let img of imagenes" [src]="img.src" [alt]="img.alt">
 ```
 
-📌 **¿Por qué?**: Muestra cómo manejar estructuras de datos más complejas.
+📌 **¿Por qué?**: Muy útil para galerías u obtener datos de una API.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Asegúrate de que el componente esté declarado en el módulo.
-2. Visualiza el componente en la app usando su selector (`<app-lista>`).
-3. Prueba agregar o quitar elementos del array y verifica que la lista se actualiza dinámicamente.
+1. Asegúrate de declarar el componente en el módulo.
+2. Usa el selector `<app-imagen>` en tu plantilla principal.
+3. Verifica que la imagen se carga y muestra con los atributos correctos.
 
 ---
 
@@ -90,7 +84,8 @@ frutas = [
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 
-### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
+### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+
 

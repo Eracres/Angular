@@ -53,7 +53,7 @@ Y úsalo desde el padre:
 
 ## 🔁 Navegación
 
-### 📋 - [⬅️](./Ejercicio_0.md) Ejercicio 0
+### 📋 - [⬅️](./Ejercicio_0.md) Ejercicio 0 - Módulo 2 [➡️](../../../Modulo_2_Componentes_y_Data_Binding/Modulo_2.md)
 
 ### 📋 - [Volver a Ejercicios](../README.md)
 

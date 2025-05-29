@@ -1,6 +1,12 @@
 # 🧪 Ejemplo 5: Página 404 personalizada
 
-## `not-found.component.ts`
+## 🎯 Objetivo
+Implementar un componente que actúe como página de error para rutas no definidas, usando la ruta comodín `**`.
+
+---
+
+## 📁 Ruta: src/app/not-found/not-found.component.ts
+
 ```ts
 import { Component } from '@angular/core';
 
@@ -11,32 +17,64 @@ import { Component } from '@angular/core';
 export class NotFoundComponent {}
 ```
 
-## `not-found.component.html`
+---
+
+## 📁 Ruta: src/app/not-found/not-found.component.html
+
 ```html
 <h2>Página no encontrada 😢</h2>
 <a routerLink="/">Volver al inicio</a>
 ```
 
+---
+
 ## ✅ ¿Qué hace este componente?
-Este componente se usa para manejar rutas no definidas, usando `path: '**'` en el router.
+
+Este ejemplo crea un componente para manejar rutas inválidas en la aplicación.  
+Se asocia a la ruta comodín `**` en `app-routing.module.ts`, que captura cualquier URL no reconocida y muestra una página de error personalizada.  
+Esto mejora la experiencia del usuario al navegar por rutas inexistentes.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Ruta comodín `**`
-- Página de error personalizada
-- Navegación de retorno
 
+- Uso de rutas comodín (`path: '**'`)
+- Manejo de rutas no definidas
+- Componente personalizado de error
+- Navegación con `routerLink`
 
 ---
 
 ## 💡 Variaciones sugeridas
-```ts
-Agregar un botón con `routerLink`
+
+### ✅ 1. Agregar un botón visual con routerLink
+
+📁 Ruta: src/app/not-found/not-found.component.html
+
+```html
+<button routerLink="/">Volver al inicio</button>
 ```
-```ts
-Mostrar un diseño más llamativo con íconos o animaciones
+
+📌 **¿Por qué?**: Mejora la accesibilidad y la interacción del usuario al ofrecer una navegación clara.
+
+---
+
+### ✅ 2. Mostrar un diseño más visual con íconos o animaciones
+
+```html
+<h2>❌ Error 404 - Página no encontrada</h2>
+<img src="assets/404.svg" alt="Página no encontrada">
 ```
+
+📌 **¿Por qué?**: Una interfaz más llamativa hace que el error sea más comprensible y menos frustrante para el usuario.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Asegúrate de tener una ruta comodín (`{ path: '**', component: NotFoundComponent }`) en tu `app-routing.module.ts`.
+2. Navega manualmente a una ruta inexistente, como `/no-existe`.
+3. Verifica que el componente de error se muestra correctamente y el enlace o botón funciona.
 
 ---
 

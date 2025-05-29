@@ -1,39 +1,80 @@
 # 🧪 Ejemplo 6: Redirección de rutas
 
-## `app-routing.module.ts`
+## 🎯 Objetivo
+Aprender a redirigir automáticamente rutas vacías o no válidas a una ruta válida mediante el uso de `redirectTo`.
+
+---
+
+## 📁 Ruta: src/app/app-routing.module.ts
 ```ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { InicioComponent } from './inicio/inicio.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 ```
 
-## ✅ ¿Qué hace este componente?
-Esta configuración redirige automáticamente la ruta raíz (`''`) hacia `/inicio`.
+---
+
+## ✅ ¿Qué hace este ejemplo?
+
+Esta configuración del enrutado redirige automáticamente la ruta raíz (`''`) hacia `/inicio`.
+
+Cuando un usuario accede a `http://localhost:4200`, Angular lo lleva directamente al componente asociado a la ruta `/inicio`.  
+Es importante usar `pathMatch: 'full'` para evitar coincidencias parciales no deseadas.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Redirección de rutas
-- Uso de `redirectTo`
-- Importancia de `pathMatch: 'full'`
 
+- Redirección de rutas con `redirectTo`
+- Importancia de `pathMatch: 'full'`
+- Rutas raíz y componentes asociados
 
 ---
 
 ## 💡 Variaciones sugeridas
+
+### ✅ 1. Redirigir otra ruta como `/home` → `/inicio`
+
 ```ts
-Redirigir otras rutas como `/home` → `/inicio`
+{ path: 'home', redirectTo: '/inicio', pathMatch: 'full' }
 ```
+
+📌 **¿Por qué?**: Útil para mantener compatibilidad con URLs antiguas o alias de navegación.
+
+---
+
+### ✅ 2. Redirigir rutas no válidas usando comodín `**`
+
 ```ts
-Combinar redirección con rutas hijas
+{ path: '**', redirectTo: '/inicio', pathMatch: 'full' }
 ```
+
+📌 **¿Por qué?**: Mejora la experiencia de usuario al evitar errores de navegación cuando se introduce una URL incorrecta.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Abre `http://localhost:4200` y verifica que se carga el componente `InicioComponent`.
+2. Prueba acceder a rutas como `/`, `/home`, o rutas inválidas y observa si redirige correctamente a `/inicio`.
+3. Asegúrate de que `RouterModule` esté importado en `AppModule`.
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Modulo 5 [➡️](../../../Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Módulo 5 [➡️](../../../Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

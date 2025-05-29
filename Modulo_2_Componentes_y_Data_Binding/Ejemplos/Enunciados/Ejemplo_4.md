@@ -1,71 +1,67 @@
-# 🧪 Ejemplo 4: Two-way binding con ngModel
+# 🧪 Ejemplo 5: Binding combinado
 
 ## 🎯 Objetivo
-Aprender a sincronizar una variable del componente con un campo de entrada del usuario en tiempo real utilizando `[(ngModel)]`.
+Practicar la combinación de interpolación y event binding para mostrar y manipular datos desde la plantilla HTML.
 
 ## 📁 Ruta: src/app/app.component.ts
 
 ```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-})
 export class AppComponent {
-  nombre: string = '';
+  producto = 'Laptop Gamer';
+  precio = 1500;
 }
 ```
 
 ## 📁 Ruta: src/app/app.component.html
 
 ```html
-<label>Nombre:
-  <input [(ngModel)]="nombre" placeholder="Escribe tu nombre">
-</label>
-<p>Hola, {{ nombre }}</p>
+<h2>{{ producto }}</h2>
+<p>Precio: ${{ precio }}</p>
+<button (click)="alert('Producto: ' + producto)">Ver</button>
 ```
 
 ---
 
 ## ✅ ¿Qué hace este componente?
 
-Este ejemplo permite al usuario escribir su nombre en un campo de texto y ver el resultado en tiempo real en la interfaz gracias a la **vinculación bidireccional (two-way binding)** que ofrece Angular mediante `[(ngModel)]`.
+Este componente combina dos técnicas fundamentales de Angular:  
+- **Interpolación** para mostrar datos dinámicos como el nombre del producto y su precio.  
+- **Event binding** para responder a eventos del usuario, como el clic en un botón.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Uso de `FormsModule` para trabajar con formularios template-driven
-- Two-way data binding con `[(ngModel)]`
-- Interpolación de valores
+- Interpolación con `{{ }}`
+- Enlace de eventos con `(click)`
+- Manipulación de eventos desde la vista
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Mostrar longitud del texto
+### ✅ 1. Agregar más propiedades
 
-```html
-<p>Tu nombre tiene {{ nombre.length }} caracteres.</p>
+```ts
+stock = 10;
+marca = 'Asus';
 ```
-📌 **¿Por qué?**: Para enseñar cómo acceder a propiedades de la variable vinculada.
+📌 **¿Por qué?**: Para representar más detalles del producto.
 
 ---
 
-### ✅ 2. Usar ngModel en una etiqueta `textarea`
+### ✅ 2. Cambiar el mensaje del botón
 
 ```html
-<textarea [(ngModel)]="mensaje" placeholder="Escribe tu mensaje"></textarea>
-<p>Mensaje: {{ mensaje }}</p>
+<button (click)="alert('Has elegido: ' + producto)">Seleccionar</button>
 ```
-📌 **¿Por qué?**: Para demostrar que `[(ngModel)]` se puede usar con distintos elementos del formulario.
+📌 **¿Por qué?**: Para personalizar la interacción con el usuario.
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)
+### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
 
 ### 🧪 - [Volver a Ejemplos](../README.md)
 

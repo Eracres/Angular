@@ -1,11 +1,9 @@
 # 🧪 Ejemplo 3: Navegación con routerLink
 
-## `app.component.ts`
-```ts
-export class AppComponent {}
-```
+## 🎯 Objetivo
+Configurar enlaces de navegación en la plantilla usando `routerLink` para cambiar de ruta sin recargar la página.
 
-## `app.component.html`
+## 📁 Ruta: src/app/app.component.html
 ```html
 <nav>
   <a routerLink="/">Inicio</a>
@@ -14,26 +12,61 @@ export class AppComponent {}
 <router-outlet></router-outlet>
 ```
 
-## ✅ ¿Qué hace este componente?
-El atributo `routerLink` permite cambiar de ruta sin recargar la página, manteniendo la experiencia SPA.
+## 📁 Ruta: src/app/app.component.ts
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {}
+```
+
+---
+
+## ✅ ¿Qué hace este ejemplo?
+
+Este ejemplo muestra cómo usar el atributo `routerLink` en enlaces HTML para navegar entre rutas definidas en la aplicación Angular.  
+Permite cambiar de vista sin recargar la página, lo que mantiene la experiencia tipo SPA (Single Page Application).
+
+Los enlaces apuntan a rutas configuradas previamente en `app-routing.module.ts`.  
+El componente `<router-outlet>` es donde se carga dinámicamente el contenido asociado a cada ruta.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Enlace declarativo con `routerLink`
-- Estilo de navegación SPA
-- Separación de menú y contenido
 
+- Enlace de rutas con `routerLink`
+- Navegación sin recarga con Angular Router
+- Uso del `<router-outlet>` como contenedor de vistas
 
 ---
 
 ## 💡 Variaciones sugeridas
-```ts
-Agregar clase activa con `routerLinkActive`
+
+### ✅ 1. Agregar clase activa a enlaces
+```html
+<a routerLink="/acerca" routerLinkActive="activo">Acerca</a>
 ```
-```ts
-Agregar más enlaces como `/contacto`, `/servicios`
+📌 **¿Por qué?**: Para resaltar visualmente el enlace activo mediante estilos CSS.
+
+---
+
+### ✅ 2. Incluir más enlaces
+```html
+<a routerLink="/contacto">Contacto</a>
+<a routerLink="/servicios">Servicios</a>
 ```
+📌 **¿Por qué?**: Permite una navegación más completa en aplicaciones con múltiples vistas.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Haz clic en los enlaces "Inicio" o "Acerca".
+2. Verifica que el contenido cambia sin recargar la página.
+3. Comprueba que `<router-outlet>` muestra el componente correcto según la ruta.
 
 ---
 
@@ -48,4 +81,5 @@ Agregar más enlaces como `/contacto`, `/servicios`
 ### 📘 - [Volver a Módulo 4](../../Modulo_4.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+
 

@@ -1,5 +1,9 @@
 # 🧪 Ejemplo 2: *ngFor – Listado de elementos
 
+## 🎯 Objetivo
+Utilizar la directiva `*ngFor` para iterar sobre una lista y mostrar los elementos en pantalla.
+
+
 ## `lista.component.ts`
 ```ts
 export class ListaComponent {
@@ -18,6 +22,11 @@ export class ListaComponent {
 Este componente recorre un array de frutas y genera un `li` por cada ítem usando `*ngFor`.
 
 ---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+Agrega o elimina elementos del array y verifica que se actualice el listado en pantalla.
+
 
 ## 🧠 Conceptos aplicados
 - Uso de `*ngFor` para iterar arrays
@@ -48,3 +57,4 @@ Agregar un índice: `let i = index`
 ### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+

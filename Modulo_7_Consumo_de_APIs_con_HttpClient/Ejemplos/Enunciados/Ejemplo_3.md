@@ -1,6 +1,9 @@
 # 🧪 Ejemplo 3: Inyección de HttpClient en un servicio
 
-## `app.module.ts`
+## 🎯 Objetivo
+Mostrar cómo inyectar el servicio `HttpClient` dentro de un servicio personalizado en Angular para realizar peticiones HTTP.
+
+## 📁 Ruta: src/app/app.module.ts
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,27 +19,102 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 ```
 
-## ✅ ¿Qué hace este ejemplo?
-Este ejemplo demuestra cómo importar `HttpClientModule` en el módulo principal de Angular para poder usar servicios HTTP en la aplicación.
+## 📁 Ruta: src/app/servicios/datos.service.ts
+```ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DatosService {
+  constructor(private http: HttpClient) {}
+
+  obtenerDatos() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  }
+}
+```
+
+## 📁 Ruta: src/app/app.component.ts
+```ts
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from './servicios/datos.service';
+
+@Component({
+  selector: 'app-root',
+  template: `<ul><li *ngFor="let dato of datos">{{ dato.title }}</li></ul>`
+})
+export class AppComponent implements OnInit {
+  datos: any[] = [];
+
+  constructor(private datosService: DatosService) {}
+
+  ngOnInit(): void {
+    this.datosService.obtenerDatos().subscribe(res => {
+      this.datos = res;
+    });
+  }
+}
+```
+
+---
+
+## ✅ ¿Qué hace este componente?
+
+Este ejemplo muestra cómo inyectar `HttpClient` en un servicio (`DatosService`) para obtener datos de una API externa.  
+Luego, el componente principal (`AppComponent`) consume ese servicio y muestra los datos utilizando `*ngFor`.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Importación de módulos en Angular
-- Activación de `HttpClient` a nivel global
-- Configuración base para consumo de APIs
+
+- Inyección de dependencias en Angular
+- Uso de `HttpClient` en servicios
+- Subcripción a observables de tipo `HttpClient.get()`
+- Visualización dinámica con `*ngFor`
 
 ---
 
 ## 💡 Variaciones sugeridas
 
+### ✅ 1. Usar tipado con interfaces
 ```ts
-// Importar HttpClientModule en un módulo específico en vez del AppModule
-```
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
-```ts
-// Usar HttpClientModule en combinación con interceptores
+obtenerDatos() {
+  return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+}
 ```
+📌 **¿Por qué?**: Mejora el control de tipos y ayuda a prevenir errores en tiempo de desarrollo.
+
+---
+
+### ✅ 2. Agregar manejo de errores
+```ts
+obtenerDatos() {
+  return this.http.get('https://jsonplaceholder.typicode.com/posts').pipe(
+    catchError(error => {
+      console.error('Error al obtener los datos', error);
+      return of([]);
+    })
+  );
+}
+```
+📌 **¿Por qué?**: El manejo de errores evita que la app se rompa si la API falla.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Asegúrate de importar `HttpClientModule` en `AppModule`.
+2. Verifica que el servicio `DatosService` está inyectado correctamente en el componente.
+3. Comprueba que al cargar la app se muestran los títulos de los datos en la plantilla.
 
 ---
 

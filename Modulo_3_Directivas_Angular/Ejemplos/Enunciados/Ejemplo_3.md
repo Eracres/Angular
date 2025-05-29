@@ -1,5 +1,9 @@
 # 🧪 Ejemplo 3: *ngSwitch – Condición múltiple
 
+## 🎯 Objetivo
+Implementar `ngSwitch` para mostrar contenido diferente en función de un valor de control.
+
+
 ## `switch.component.ts`
 ```ts
 export class SwitchComponent {
@@ -20,6 +24,11 @@ export class SwitchComponent {
 Este componente utiliza `ngSwitch` para mostrar un contenido diferente según el valor de `nivel`.
 
 ---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+Cambia el valor de `opcionSeleccionada` y comprueba que se muestra la sección correspondiente.
+
 
 ## 🧠 Conceptos aplicados
 - Uso de `ngSwitch`, `*ngSwitchCase` y `*ngSwitchDefault`
@@ -51,3 +60,4 @@ nivel = 3;
 ### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+

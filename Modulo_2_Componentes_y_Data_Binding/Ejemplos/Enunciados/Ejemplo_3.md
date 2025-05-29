@@ -1,50 +1,61 @@
 # 🧪 Ejemplo 3: Event binding
 
-## `app.component.ts`
+## 🎯 Objetivo
+Aprender a manejar eventos del usuario como clics usando la sintaxis `(evento)`.
+
+## 📁 Ruta: src/app/app.component.ts
 ```ts
 export class AppComponent {
   mostrarMensaje() {
-    alert('¡Has hecho clic!');
+    alert('¡Hola desde Angular!');
   }
 }
 ```
 
-## `app.component.html`
+## 📁 Ruta: src/app/app.component.html
 ```html
-<button (click)="mostrarMensaje()">Click aquí</button>
+<button (click)="mostrarMensaje()">Haz clic aquí</button>
 ```
 
-## ✅ ¿Qué hace este componente?
-Este componente reacciona a eventos del usuario con **event binding**. Al hacer clic, se ejecuta una función del componente.
+---
+
+## ✅ ¿Qué hace este ejemplo?
+Este ejemplo muestra cómo responder a un **evento DOM** como `click` ejecutando una función del componente.
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Manejo de eventos DOM
-- event binding con `(evento)`
-- Ejecución de funciones del componente
 
+- Event binding `(evento)`
+- Vinculación de acciones del usuario a lógica del componente
+- Manejo de funciones en Angular
 
 ---
 
 ## 💡 Variaciones sugeridas
+
+### ✅ Mostrar datos en consola en lugar de alert
 ```ts
-console.log('Clic detectado');
+console.log('Botón clickeado');
 ```
-```ts
-Cambiar mensaje: alert('¡Gracias por hacer clic!');
-```
+
+📌 ¿Por qué?: Para pruebas sin mostrar ventanas emergentes.
+
+---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+1. Ejecuta la app.
+2. Haz clic en el botón.
+3. Debe aparecer un `alert` con el mensaje definido.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
 ### 📘 - [Volver a Módulo 2](../../Modulo_2.md)
-
 ### 🏠 - [Inicio](../../../README.md)
+

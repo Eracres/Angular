@@ -1,5 +1,9 @@
 # 🧪 Ejemplo 4: ngClass – Aplicar clases condicionales
 
+## 🎯 Objetivo
+Aplicar clases condicionales con `ngClass` según una variable booleana.
+
+
 ## `estilo.component.ts`
 ```ts
 export class EstiloComponent {
@@ -16,6 +20,11 @@ export class EstiloComponent {
 Este componente aplica clases CSS dinámicamente según el valor de `error`, usando `ngClass`.
 
 ---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+Activa y desactiva la variable booleana desde el componente y verifica el cambio de estilo en pantalla.
+
 
 ## 🧠 Conceptos aplicados
 - Uso de `ngClass` para estilos condicionales
@@ -47,4 +56,5 @@ Controlar con botón: `<button (click)=\"error = !error\">Toggle error</button>`
 ### 📘 - [Volver a Módulo 3](../../Modulo_3.md)
 
 ### 🏠 - [Inicio](../../../README.md)
+
 

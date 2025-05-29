@@ -1,5 +1,11 @@
 # 🧪 Ejemplo 1: Importación de HttpClientModule
 
+## 🎯 Objetivo
+
+Habilitar el uso del cliente HTTP en una aplicación Angular mediante la importación del módulo `HttpClientModule` en el módulo raíz.
+
+---
+
 ## 📁 Ruta: src/app/app.module.ts
 
 ```ts
@@ -128,4 +134,3 @@ export class PruebaHttpService {
 ### 📘 - [Volver a Módulo 7](../../Modulo_7.md)
 
 ### 🏠 - [Inicio](../../../README.md)
-

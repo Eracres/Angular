@@ -112,7 +112,9 @@ return throwError(() => new Error('No se pudo cargar la información. Intente m�
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - [Volver a Ejemplos](../README.md)
+### 🧪 - [⬅️](./Ejemplo_5.md) Ejemplo 5 - Módulo 8 [➡️](../../../Modulo_8/Modulo_8.md)
+
+### 🧪 - [Volver a Ejemplos](../README.md)
 
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 

@@ -1,5 +1,9 @@
 # 🧪 Ejemplo 1: *ngIf – Mostrar elemento condicionalmente
 
+## 🎯 Objetivo
+Aplicar una directiva estructural `*ngIf` para mostrar un mensaje condicionalmente.
+
+
 ## `condicional.component.ts`
 ```ts
 export class CondicionalComponent {
@@ -16,6 +20,11 @@ export class CondicionalComponent {
 Este componente utiliza `*ngIf` para mostrar un párrafo solo cuando la variable `mostrar` es verdadera.
 
 ---
+
+## ✅ ¿Cómo verificar que funciona correctamente?
+
+Cambia el valor de `mostrarMensaje` en el componente y observa si aparece o desaparece el contenido HTML.
+
 
 ## 🧠 Conceptos aplicados
 - Uso de directiva estructural `*ngIf`

@@ -2,16 +2,16 @@
 
 ## 🗂️ Temario General del Curso
 
-1. [Introducción a Angular ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
-2. [Componentes y Data Binding](./Modulo_2_Componentes_y_Data_Binding/Modulo_2.md)
-3. [Directivas Angular ](./Modulo_3_Directivas_Angular/Modulo_3.md)
-4. [Routing ](./Modulo_4_Routing/Modulo_4.md)
-5. [Servicios y comunicación](./Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
-6. [Formularios y Validaciones ](./Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
-7. [Consumo de APIs con HttpClient ](./Modulo_7_Consumo_de_APIs_con_HttpClient/Modulo_7.md)
-8. [Pipes y Personalizados ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
-9. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
-10. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
+### 1. [Introducción a Angular ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
+### 2. [Componentes y Data Binding](./Modulo_2_Componentes_y_Data_Binding/Modulo_2.md)
+### 3. [Directivas Angular ](./Modulo_3_Directivas_Angular/Modulo_3.md)
+### 4. [Routing ](./Modulo_4_Routing/Modulo_4.md)
+### 5. [Servicios y comunicación](./Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
+### 6. [Formularios y Validaciones ](./Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
+### 7. [Consumo de APIs con HttpClient ](./Modulo_7_Consumo_de_APIs_con_HttpClient/Modulo_7.md)
+### 8. [Pipes y Personalizados ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
+### 9. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
+### 10. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
 
 Este curso está diseñado para llevarte paso a paso desde cero hasta construir y desplegar aplicaciones web modernas usando Angular. A continuación encontrarás todos los módulos explicados en detalle, con ejemplos prácticos y ejercicios para afianzar lo aprendido.
 

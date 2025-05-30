@@ -18,7 +18,7 @@ Verificar si el usuario está autenticado mediante un método booleano.
 
 ## 🔁 Navegación
 
-### 📋 - Ejercicio 4 [➡️](./Ejercicio_4.md)
+### 📋 - [⬅️](./Ejercicio_2.md) Ejercicio 2 - Ejercicio 4 [➡️](./Ejercicio_4.md)
 ### 📋 - [Volver a Ejercicios](../README.md)
 ### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
 ### 📘 - [Volver a Módulo 9](../../Modulo_9.md)

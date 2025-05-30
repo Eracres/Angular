@@ -1,55 +1,51 @@
-# 🧪 Ejemplo 1: Compilar aplicación para producción
+# 🧪 Ejemplo 2: Preparar proyecto para Firebase Hosting
 
 ## 🎯 Objetivo
-Generar una versión optimizada de la aplicación Angular lista para ser desplegada.
+Inicializar Firebase en un proyecto Angular para poder desplegarlo.
 
 ## 📁 Ruta: raíz del proyecto
 ```bash
-ng build --configuration production
+firebase init
 ```
 
 ---
 
 ## ✅ ¿Qué hace este comando?
 
-Este comando compila la app con las configuraciones de producción, aplicando optimizaciones como:
-- Minificación de código
-- Eliminación de zonas muertas
-- Compresión de archivos
-
-Los resultados se guardan en la carpeta `dist/`.
+Lanza un asistente para configurar Firebase Hosting.  
+Debes seleccionar:
+- Firebase Hosting
+- Proyecto existente o nuevo
+- Carpeta de salida (`dist/tu-proyecto`)
+- Configurar como SPA (`index.html`)
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- CLI de Angular
-- Build para entornos productivos
-- Optimización automática
+- Configuración inicial de Firebase
+- Asistente de CLI para servicios web
+- Generación de archivos `.firebaserc` y `firebase.json`
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Especificar carpeta de salida
-```bash
-ng build --outputPath=dist/proyecto-angular
-```
-
-📌 **¿Por qué?**: Controlas exactamente dónde se generan los archivos.
+### ✅ 1. Configurar múltiples entornos
+Edita `firebase.json` y usa reglas para rutas específicas.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Ejecuta `ng build --configuration production`
-2. Verifica que la carpeta `dist/` contiene los archivos `index.html`, `main.*.js`, etc.
-3. Sirve localmente con `npx serve dist/` para comprobar el resultado.
+1. Ejecuta `firebase init`
+2. Revisa que se generaron los archivos de configuración
+3. Verifica que se reconoció la carpeta `dist/` para deploy
 
 ---
 
 ## 🔁 Navegación
-### 🧪 - Ejemplo 2 [➡️](./Ejemplo_2.md)
+### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
 ### 🧪 - [Volver a Ejemplos](../README.md)
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 ### 📘 - [Volver a Módulo 10](../../Modulo_10.md)

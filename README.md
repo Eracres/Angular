@@ -9,9 +9,9 @@
 ### 5. [Servicios y comunicación](./Modulo_5_Servicios_y_Comunicación/Modulo_5.md)
 ### 6. [Formularios y Validaciones ](./Modulo_6_Formularios_y_Validaciones/Modulo_6.md)
 ### 7. [Consumo de APIs con HttpClient ](./Modulo_7_Consumo_de_APIs_con_HttpClient/Modulo_7.md)
-### 8. [Pipes y Personalizados ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
-### 9. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
-### 10. [Introducción a React ](./Modulo_1_Introduccion_a_Angular/Modulo_1.md)
+### 8. [Pipes y Personalizados ](./Modulo_1_Introduccion_a_Angular/Modulo_8.md)
+### 9. [Introducción a React ](./Modulo_9_Autenticación_con_JWT/Modulo_9.md)
+### 10. [Introducción a React ](./Modulo_10_Despliegue_de_Aplicaciones_Angular/Modulo_10.md)
 
 Este curso está diseñado para llevarte paso a paso desde cero hasta construir y desplegar aplicaciones web modernas usando Angular. A continuación encontrarás todos los módulos explicados en detalle, con ejemplos prácticos y ejercicios para afianzar lo aprendido.
 

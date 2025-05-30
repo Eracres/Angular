@@ -1,9 +1,9 @@
-# 🧪 Ejemplo 1: Crear servicio AuthService
+# 🧪 Ejemplo 1: Simular login con AuthService
 
 ## 🎯 Objetivo
-Implementar un servicio de autenticación (`AuthService`) que gestione el inicio de sesión y el almacenamiento del token JWT simulado.
+Implementar un servicio de autenticación simulado que almacene un token falso en el localStorage al hacer login.
 
-## 📁 Ruta: src/app/auth.service.ts
+## 📁 Ruta: src/app/servicios/auth.service.ts
 ```ts
 import { Injectable } from '@angular/core';
 
@@ -11,89 +11,60 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private tokenKey = 'token';
-
   login(email: string, password: string): void {
-    if (email && password) {
-      localStorage.setItem(this.tokenKey, 'falso-token');
-    }
-  }
-
-  logout(): void {
-    localStorage.removeItem(this.tokenKey);
-  }
-
-  estaAutenticado(): boolean {
-    return !!localStorage.getItem(this.tokenKey);
+    // Simulación de login
+    localStorage.setItem('token', 'falso-token');
   }
 }
 ```
 
 ---
 
-## ✅ ¿Qué hace este componente?
-El servicio `AuthService` simula el comportamiento de un sistema de autenticación:
-
-- Al llamar a `login()`, guarda un token falso en `localStorage`.
-- `logout()` elimina ese token.
-- `estaAutenticado()` comprueba si el token existe, indicando si el usuario está autenticado.
+## ✅ ¿Qué hace este ejemplo?
+Este servicio simula un inicio de sesión sin conexión a un backend real.  
+Al ejecutar `login()`, se guarda un token ficticio en `localStorage`.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Servicios Angular (`@Injectable`)
-- Almacenamiento local (`localStorage`)
-- Simulación de flujos de autenticación
-- Reutilización de lógica de seguridad en toda la app
+- Creación de servicios en Angular
+- Simulación de lógica de autenticación
+- Uso del localStorage para persistencia de datos
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Guardar el email del usuario en localStorage
+### ✅ Validar credenciales ficticias
 
 ```ts
-login(email: string, password: string): void {
-  if (email && password) {
-    localStorage.setItem(this.tokenKey, 'falso-token');
-    localStorage.setItem('email', email);
+login(email: string, password: string): boolean {
+  if (email === 'admin@angular.com' && password === '1234') {
+    localStorage.setItem('token', 'falso-token');
+    return true;
   }
+  return false;
 }
 ```
 
-📌 **¿Por qué?**: Permite mostrar el nombre del usuario logueado en la interfaz.
-
----
-
-### ✅ 2. Verificar token al iniciar la app
-
-```ts
-ngOnInit() {
-  const logueado = this.authService.estaAutenticado();
-  if (logueado) {
-    // Redirigir al dashboard o mostrar usuario
-  }
-}
-```
-
-📌 **¿Por qué?**: Mejora la UX validando la sesión desde el principio.
+📌 **¿Por qué?**: Para controlar acceso con datos simulados.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Llama a `authService.login('test', '123')` y revisa `localStorage`.
-2. Usa `authService.estaAutenticado()` para validar si devuelve `true`.
-3. Llama a `authService.logout()` y asegúrate de que se borre el token.
+1. Llama al método `login()` desde un componente.
+2. Abre las herramientas del navegador y verifica que el token esté en el `localStorage`.
+3. Comprueba que no se recarga la página ni hay errores.
 
 ---
 
 ## 🔁 Navegación
-
 ### 🧪 - Ejemplo 2 [➡️](./Ejemplo_2.md)
 ### 🧪 - [Volver a Ejemplos](../README.md)
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
 ### 📘 - [Volver a Módulo 9](../../Modulo_9.md)
 ### 🏠 - [Inicio](../../../README.md)
+
 

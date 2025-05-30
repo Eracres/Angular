@@ -1,27 +1,18 @@
-# 🧪 Ejemplo 3: Crear un AuthGuard para proteger rutas
+# 🧪 Ejemplo 3: Verificar autenticación con método estaAutenticado
 
 ## 🎯 Objetivo
-Proteger rutas específicas en la aplicación usando un guard de autenticación (`AuthGuard`) que valide si el usuario está autenticado.
+Implementar una función que determine si el usuario está autenticado revisando si hay token en el localStorage.
 
-## 📁 Ruta: src/app/auth.guard.ts
+## 📁 Ruta: src/app/servicios/auth.service.ts
 ```ts
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
-
-  canActivate(): boolean {
-    if (this.auth.estaAutenticado()) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
-      return false;
-    }
+export class AuthService {
+  estaAutenticado(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 }
 ```
@@ -29,51 +20,47 @@ export class AuthGuard implements CanActivate {
 ---
 
 ## ✅ ¿Qué hace este ejemplo?
-
-Este ejemplo crea un **AuthGuard** que se encarga de verificar si el usuario está autenticado antes de acceder a ciertas rutas.  
-Si no lo está, redirige al usuario a la página de login.
+Este método comprueba si hay un token guardado y devuelve `true` o `false`.  
+Esto permite condicionar acceso a rutas o mostrar/ocultar elementos en la interfaz.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Uso de interfaces como `CanActivate` en Angular
-- Redirección con `Router`
-- Inyección de servicios
-- Seguridad en navegación por rutas
+- Validación de estado autenticado
+- Acceso al `localStorage`
+- Métodos de servicio reutilizables
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ Aplicar el guard en una ruta protegida
+### ✅ Verificar expiración del token
 
 ```ts
-const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
-];
+estaAutenticado(): boolean {
+  const token = localStorage.getItem('token');
+  // Agrega lógica para verificar expiración
+  return token !== null;
+}
 ```
-📌 **¿Por qué?**: Para restringir acceso solo a usuarios autenticados.
+
+📌 **¿Por qué?**: Para evitar aceptar tokens viejos o inválidos.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Define una ruta con `canActivate: [AuthGuard]`.
-2. Intenta acceder a esa ruta sin iniciar sesión y asegúrate de ser redirigido.
-3. Haz que `estaAutenticado()` devuelva `true` y verifica que ahora sí puedes entrar.
+1. Agrega un botón en un componente para mostrar el resultado de `estaAutenticado()`.
+2. Guarda y borra el token manualmente desde el navegador para probarlo.
+3. Comprueba si cambia el valor retornado correctamente.
 
 ---
 
 ## 🔁 Navegación
-
 ### 🧪 - [⬅️](./Ejemplo_2.md) Ejemplo 2 - Ejemplo 4 [➡️](./Ejemplo_4.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
 ### 📘 - [Volver a Módulo 9](../../Modulo_9.md)
-
 ### 🏠 - [Inicio](../../../README.md)
 

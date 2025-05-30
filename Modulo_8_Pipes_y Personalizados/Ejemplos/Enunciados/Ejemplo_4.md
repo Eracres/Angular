@@ -1,93 +1,93 @@
-# 🧪 Ejemplo 4: Pipe personalizado para aplicar IVA
+# 🧪 Ejemplo 4: Pipe personalizado: descuento
 
-## 🎯 Objetivo
-Crear un pipe personalizado que aplique un porcentaje de IVA sobre un precio base.
+## 🎯 Objetivo  
+Crear un pipe personalizado en Angular que aplique un descuento porcentual a un precio numérico.
 
-## 📁 Ruta: src/app/pipes/iva.pipe.ts
+## 📁 Ruta: src/app/descuento.pipe.ts
 ```ts
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'iva' })
-export class IvaPipe implements PipeTransform {
-  transform(valor: number, porcentaje: number = 21): number {
-    return valor + (valor * porcentaje / 100);
+@Pipe({
+  name: 'descuento'
+})
+export class DescuentoPipe implements PipeTransform {
+  transform(valor: number, porcentaje: number): number {
+    return valor - (valor * porcentaje / 100);
   }
 }
 ```
 
-## 📁 Ruta: src/app/app.component.ts
+## 📁 Ruta: src/app/descuento/descuento.component.ts
 ```ts
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+  selector: 'app-descuento',
+  templateUrl: './descuento.component.html'
 })
-export class AppComponent {
-  precioBase = 100;
+export class DescuentoComponent {
+  precioOriginal = 100;
+  porcentajeDescuento = 15;
 }
 ```
 
-## 📁 Ruta: src/app/app.component.html
+## 📁 Ruta: src/app/descuento/descuento.component.html
 ```html
-<p>Precio con IVA (21%): {{ precioBase | iva }}</p>
-<p>Precio con IVA (10%): {{ precioBase | iva:10 }}</p>
+<p>Precio con descuento: {{ precioOriginal | descuento: porcentajeDescuento }} €</p>
 ```
 
 ---
 
 ## ✅ ¿Qué hace este componente?
 
-Este ejemplo muestra cómo crear y utilizar un pipe personalizado para calcular el precio con IVA.  
-El pipe `iva` recibe un número y le aplica un porcentaje adicional configurable.  
-Por defecto se aplica el 21%, pero puede ajustarse en la plantilla.
+Este ejemplo utiliza un **pipe personalizado** llamado `descuento` para calcular el precio final después de aplicar un porcentaje de descuento.  
+El valor original (`precioOriginal`) se reduce automáticamente mediante el pipe sin necesidad de lógica adicional en el componente.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
 - Creación de pipes personalizados con `@Pipe`
-- Implementación de la interfaz `PipeTransform`
-- Aplicación de lógica de transformación reutilizable
-- Paso de argumentos a pipes
+- Implementación de `PipeTransform`
+- Paso de argumentos al pipe desde la plantilla
+- Transformación de valores directamente en la vista
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Mostrar precio sin decimales
-
-```ts
-return Math.round(valor + (valor * porcentaje / 100));
+### ✅ 1. Mostrar el precio original y el final
+```html
+<p>Precio original: {{ precioOriginal }} €</p>
+<p>Precio final: {{ precioOriginal | descuento: porcentajeDescuento }} €</p>
 ```
 
-📌 ¿Por qué?: Mejora la presentación en interfaces sin requerir precisión decimal.
+📌 **¿Por qué?**: Ayuda a visualizar claramente el efecto del descuento.
 
 ---
 
-### ✅ 2. Aplicar descuento en lugar de IVA
-
-```ts
-return valor - (valor * porcentaje / 100);
+### ✅ 2. Mostrar también el importe descontado
+```html
+<p>Descuento aplicado: {{ precioOriginal * (porcentajeDescuento / 100) }} €</p>
 ```
 
-📌 ¿Por qué?: Puedes invertir la lógica del pipe para reutilizarlo como "descuento".
+📌 **¿Por qué?**: Muestra al usuario cuánto se está ahorrando.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Declara el pipe en el módulo (`declarations`).
-2. Usa el pipe en la plantilla con distintas tasas de IVA.
-3. Comprueba que los valores se actualizan correctamente con los porcentajes proporcionados.
+1. Asegúrate de declarar el pipe `DescuentoPipe` en el módulo correspondiente.
+2. Comprueba en el navegador que el valor mostrado corresponde a la operación `precio - (precio * porcentaje / 100)`.
+3. Cambia los valores de `precioOriginal` y `porcentajeDescuento` para comprobar que el cálculo es dinámico.
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)
-### 🧪 - [Volver a Ejemplos](../README.md)
-### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-### 📘 - [Volver a Módulo 8](../../Modulo_8.md)
+### 🧪 - [⬅️](./Ejemplo_3.md) Ejemplo 3 - Ejemplo 5 [➡️](./Ejemplo_5.md)  
+### 🧪 - [Volver a Ejemplos](../README.md)  
+### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)  
+### 📘 - [Volver a Módulo 8](../../Modulo_8.md)  
 ### 🏠 - [Inicio](../../../README.md)
 

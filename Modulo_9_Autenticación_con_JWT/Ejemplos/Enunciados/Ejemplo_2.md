@@ -1,9 +1,9 @@
-# 🧪 Ejemplo 2: Servicio de autenticación básico
+# 🧪 Ejemplo 2: Guardar token en localStorage
 
 ## 🎯 Objetivo
-Crear un servicio que gestione la autenticación de usuarios simulando el uso de JWT (token almacenado localmente).
+Persistir un token de autenticación en el navegador usando `localStorage`.
 
-## 📁 Ruta: src/app/auth.service.ts
+## 📁 Ruta: src/app/servicios/auth.service.ts
 ```ts
 import { Injectable } from '@angular/core';
 
@@ -11,18 +11,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  login(email: string, password: string): void {
-    if (email && password) {
-      localStorage.setItem('token', 'falso-token');
-    }
-  }
-
-  logout(): void {
-    localStorage.removeItem('token');
-  }
-
-  estaAutenticado(): boolean {
-    return !!localStorage.getItem('token');
+  login(): void {
+    const token = 'token-de-prueba';
+    localStorage.setItem('token', token);
   }
 }
 ```
@@ -30,57 +21,50 @@ export class AuthService {
 ---
 
 ## ✅ ¿Qué hace este ejemplo?
-
-Este servicio `AuthService` permite simular un inicio de sesión muy básico usando el almacenamiento local para guardar un "token".  
-Incluye métodos para iniciar sesión (`login`), cerrar sesión (`logout`) y verificar si el usuario está autenticado (`estaAutenticado`).
+Al llamar al método `login`, el token de prueba se guarda localmente.  
+Esto permite que Angular lo lea después para validar autenticaciones o proteger rutas.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Almacenamiento en `localStorage`
-- Simulación de login y logout
-- Servicios inyectables y reutilizables
-- Control de estado autenticado
+- Uso del localStorage en Angular
+- Persistencia de sesión sin backend
+- Servicios como contenedores de lógica
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ Añadir retorno booleano al login
+### ✅ Agregar expiración manual
 
 ```ts
-login(email: string, password: string): boolean {
-  if (email === 'admin@test.com' && password === '1234') {
-    localStorage.setItem('token', 'token-valido');
-    return true;
-  }
-  return false;
+login(): void {
+  const tokenData = {
+    token: 'token-de-prueba',
+    expira: new Date().getTime() + 3600000
+  };
+  localStorage.setItem('token', JSON.stringify(tokenData));
 }
 ```
 
-📌 **¿Por qué?**: Permite mostrar mensajes o redirigir según éxito o fallo.
+📌 **¿Por qué?**: Puedes comprobar la validez del token más adelante con fecha de expiración.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Inyecta `AuthService` en el componente de login.
-2. Llama a `login()` con un email y contraseña simulada.
-3. Comprueba que `localStorage.getItem('token')` devuelve el valor esperado.
-4. Llama a `logout()` y verifica que el token se elimina correctamente.
+1. Llama al método `login()` y revisa el almacenamiento del navegador.
+2. Asegúrate de que se guarde el valor correctamente.
+3. Elimina o cambia el token para simular cierre de sesión.
 
 ---
 
 ## 🔁 Navegación
-
 ### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
 ### 📘 - [Volver a Módulo 9](../../Modulo_9.md)
-
 ### 🏠 - [Inicio](../../../README.md)
+
 

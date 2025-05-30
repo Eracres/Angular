@@ -1,105 +1,82 @@
-# 🧪 Ejemplo 5: Pipe personalizado calcularEdad
+# 🧪 Ejemplo 5: Pipe personalizado: mayusInvertido
 
 ## 🎯 Objetivo
-Crear un pipe que calcule automáticamente la edad de una persona a partir de su fecha de nacimiento.
+Crear un pipe personalizado que transforme un texto a mayúsculas y luego invierta su contenido.
 
----
-
-## 📁 Ruta: src/app/pipes/calcular-edad.pipe.ts
+## 📁 Ruta: src/app/pipes/mayus-invertido.pipe.ts
 ```ts
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'calcularEdad' })
-export class CalcularEdadPipe implements PipeTransform {
-  transform(fechaNacimiento: string): number {
-    const hoy = new Date();
-    const nacimiento = new Date(fechaNacimiento);
-    let edad = hoy.getFullYear() - nacimiento.getFullYear();
-    const mes = hoy.getMonth() - nacimiento.getMonth();
-
-    if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
-      edad--;
-    }
-
-    return edad;
+@Pipe({ name: 'mayusInvertido' })
+export class MayusInvertidoPipe implements PipeTransform {
+  transform(valor: string): string {
+    return valor.toUpperCase().split('').reverse().join('');
   }
 }
 ```
 
----
-
 ## 📁 Ruta: src/app/app.component.ts
 ```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
 export class AppComponent {
-  fechaNacimiento = '1990-06-15';
+  mensaje: string = 'angular';
 }
 ```
 
----
-
 ## 📁 Ruta: src/app/app.component.html
 ```html
-<p>Edad: {{ fechaNacimiento | calcularEdad }}</p>
+<p>{{ mensaje | mayusInvertido }}</p>
 ```
 
 ---
 
-## ✅ ¿Qué hace este ejemplo?
-
-Este ejemplo implementa un pipe personalizado llamado `calcularEdad`, que recibe una fecha en formato string y devuelve la edad actual calculada a partir de dicha fecha.
-
-Es útil para mostrar automáticamente la edad de una persona sin necesidad de actualizarla manualmente.
+## ✅ ¿Qué hace este componente?
+El pipe `mayusInvertido` transforma un texto a mayúsculas y luego invierte los caracteres.  
+Por ejemplo, `angular` se convierte en `RALUGNA`.
 
 ---
 
 ## 🧠 Conceptos aplicados
-
 - Creación de pipes personalizados
-- Uso de lógica de fecha con `Date`
-- Transformación de datos en plantillas
-- Aplicación de `PipeTransform`
+- Transformaciones de cadenas en Angular
+- Encapsulamiento de lógica de presentación
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Mostrar la edad como string con “años”
-
+### ✅ Invertir sin convertir a mayúsculas
 ```ts
-return `${edad} años`;
+return valor.split('').reverse().join('');
 ```
+📌 **¿Por qué?**: Para mantener el formato original y solo invertir el texto.
 
-📌 ¿Por qué?: Mejora la presentación del resultado en la interfaz.
-
----
-
-### ✅ 2. Permitir fechas en diferentes formatos
-
+### ✅ Añadir validación de entrada
 ```ts
-const nacimiento = new Date(Date.parse(fechaNacimiento));
+if (!valor) return '';
 ```
-
-📌 ¿Por qué?: Permite una mayor flexibilidad con formatos de entrada.
+📌 **¿Por qué?**: Evita errores si el valor es `null` o `undefined`.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Asegúrate de que el pipe esté declarado en el módulo.
-2. Cambia el valor de `fechaNacimiento` y verifica que la edad calculada cambia correctamente.
-3. Prueba con fechas recientes y antiguas para comprobar la precisión.
-4. Usa el pipe en diferentes partes de la app para reutilizarlo.
+1. Declara el pipe en el módulo correspondiente (`declarations`).
+2. Usa el pipe en una interpolación dentro del HTML.
+3. Asegúrate de que la salida sea el texto invertido y en mayúsculas.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_4.md) Ejemplo 4 - Ejemplo 6 [➡️](./Ejemplo_6.md)
-
 ### 🧪 - [Volver a Ejemplos](../README.md)
-
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-
-### 📘 - [Volver a Módulo 8](../../Modulo_8_Pipes_y_Personalizados.md)
-
+### 📘 - [Volver a Módulo 8](../../Modulo_8.md)
 ### 🏠 - [Inicio](../../../README.md)
+

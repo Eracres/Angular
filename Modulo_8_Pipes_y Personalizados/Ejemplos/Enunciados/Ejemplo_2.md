@@ -1,85 +1,113 @@
-# 🧪 Ejemplo 2: Uso del pipe `uppercase` en plantillas
+# 🧪 Ejemplo 2: Uso de servicio en componente
 
 ## 🎯 Objetivo
+Inyectar un servicio en un componente para obtener datos centralizados.
 
-Aplicar el pipe `uppercase` para transformar texto a mayúsculas directamente desde la plantilla HTML.
-
----
-
-## 📁 Ruta: src/app/pipes/palabra.component.ts
-
+## 📁 Ruta: src/app/producto.service.ts
 ```ts
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-palabra',
-  templateUrl: './palabra.component.html'
+@Injectable({
+  providedIn: 'root'
 })
-export class PalabraComponent {
-  mensaje: string = 'angular es genial';
+export class ProductoService {
+  productos = [
+    { id: 1, nombre: 'Teclado', precio: 50 },
+    { id: 2, nombre: 'Mouse', precio: 25 }
+  ];
+
+  obtenerProductos() {
+    return this.productos;
+  }
 }
 ```
 
----
+## 📁 Ruta: src/app/listado/listado.component.ts
+```ts
+import { Component, OnInit } from '@angular/core';
+import { ProductoService } from '../producto.service';
 
-## 📁 Ruta: src/app/pipes/palabra.component.html
+@Component({
+  selector: 'app-listado',
+  templateUrl: './listado.component.html'
+})
+export class ListadoComponent implements OnInit {
+  productos: any[] = [];
 
+  constructor(private productoService: ProductoService) {}
+
+  ngOnInit() {
+    this.productos = this.productoService.obtenerProductos();
+  }
+}
+```
+
+## 📁 Ruta: src/app/listado/listado.component.html
 ```html
-<p>{{ mensaje | uppercase }}</p>
+<ul>
+  <li *ngFor="let producto of productos">
+    {{ producto.nombre }} - ${{ producto.precio }}
+  </li>
+</ul>
 ```
 
 ---
 
-## ✅ ¿Qué hace este componente?
+## ✅ ¿Qué hace este ejemplo?
 
-Este ejemplo muestra cómo aplicar el pipe `uppercase` para **convertir una cadena de texto a mayúsculas** desde el HTML.  
-El pipe se invoca con `|` seguido del nombre (`uppercase`) y puede encadenarse con otros pipes si es necesario.
+Este componente muestra cómo inyectar un servicio (`ProductoService`) y consumir un método (`obtenerProductos()`) para cargar dinámicamente datos y mostrarlos en una lista HTML.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Uso de pipes incorporados en Angular
-- Transformación visual de datos desde la plantilla
-- Separación de presentación y lógica
+- Inyección de dependencias en el constructor
+- Llamadas a métodos del servicio
+- Binding e iteración con `*ngFor`
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Encadenar con `slice` para mostrar solo parte del texto en mayúsculas
+### ✅ 1. Usar `ngOnInit` para inicializar datos
 
-```html
-<p>{{ mensaje | uppercase | slice:0:7 }}</p>
+```ts
+ngOnInit() {
+  this.productos = this.productoService.obtenerProductos();
+}
 ```
-
-📌 **¿Por qué?**: Esto permite aplicar varias transformaciones en cadena desde la plantilla.
+📌 **¿Por qué?**: Es el ciclo de vida recomendado para inicializar datos.
 
 ---
 
-### ✅ 2. Reemplazar por el pipe `titlecase`
+### ✅ 2. Agregar un botón para actualizar productos
 
 ```html
-<p>{{ mensaje | titlecase }}</p>
+<button (click)="cargarProductos()">Recargar</button>
 ```
 
-📌 **¿Por qué?**: El pipe `titlecase` pone en mayúscula la primera letra de cada palabra (estilo título).
+```ts
+cargarProductos() {
+  this.productos = this.productoService.obtenerProductos();
+}
+```
+📌 **¿Por qué?**: Permite recargar los datos bajo demanda.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Carga el componente en la vista principal (`<app-palabra>`).
-2. Asegúrate de que el texto original está en minúsculas.
-3. Comprueba en el navegador que se visualiza completamente en mayúsculas.
+1. Verifica que el servicio `ProductoService` esté bien importado.
+2. Comprueba que el array `productos` se carga en el `ngOnInit`.
+3. Asegúrate de que los datos se renderizan correctamente con `*ngFor`.
 
 ---
 
 ## 🔁 Navegación
 
-### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)  
-### 🧪 - [Volver a Ejemplos](../README.md)  
-### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)  
-### 📘 - [Volver a Módulo 8](../../Modulo_8.md)  
+### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
+### 🧪 - [Volver a Ejemplos](../README.md)
+### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
+### 📘 - [Volver a Módulo 5](../../Modulo_5.md)
 ### 🏠 - [Inicio](../../../README.md)
 

@@ -1,84 +1,72 @@
-# 🧪 Ejemplo 3: Pipe personalizado para edad
+# 🧪 Ejemplo 3: Mostrar precios con currency pipe
 
 ## 🎯 Objetivo
-Crear un pipe personalizado llamado `edad` que calcule la edad a partir de una fecha de nacimiento.
+Aplicar el pipe `currency` de Angular para formatear precios en diferentes monedas y estilos.
 
----
-
-## 📁 Ruta: src/app/pipes/edad.pipe.ts
+## 📁 Ruta: src/app/precios/precios.component.ts
 ```ts
-import { Pipe, PipeTransform } from '@angular/core';
+import { Component } from '@angular/core';
 
-@Pipe({ name: 'edad' })
-export class EdadPipe implements PipeTransform {
-  transform(fechaNacimiento: string | Date): number {
-    const hoy = new Date();
-    const nacimiento = new Date(fechaNacimiento);
-    let edad = hoy.getFullYear() - nacimiento.getFullYear();
-    const m = hoy.getMonth() - nacimiento.getMonth();
-    if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
-      edad--;
-    }
-    return edad;
-  }
+@Component({
+  selector: 'app-precios',
+  templateUrl: './precios.component.html'
+})
+export class PreciosComponent {
+  precio1 = 1500;
+  precio2 = 75.5;
 }
 ```
 
----
-
-## 📁 Ruta: src/app/app.component.html
+## 📁 Ruta: src/app/precios/precios.component.html
 ```html
-<p>Edad: {{ '1990-06-15' | edad }} años</p>
+<p>Precio en euros: {{ precio1 | currency:'EUR' }}</p>
+<p>Precio en dólares: {{ precio2 | currency:'USD' }}</p>
 ```
 
 ---
 
-## ✅ ¿Qué hace este ejemplo?
+## ✅ ¿Qué hace este componente?
 
-Este pipe personalizado toma una fecha de nacimiento y calcula cuántos años han pasado desde esa fecha hasta hoy.  
-Permite reutilizar esta lógica en cualquier parte del HTML de forma limpia, legible y reutilizable.
+Este ejemplo muestra cómo aplicar el pipe `currency` para formatear valores numéricos como precios en una plantilla HTML.  
+Utilizamos distintos códigos de moneda (`EUR`, `USD`) para mostrar los valores correctamente localizados.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Creación de pipes personalizados en Angular
-- Uso de `PipeTransform` para transformar datos
-- Manipulación de fechas con `Date`
-- Cálculo de edad en base a fecha de nacimiento
+- Uso del pipe `currency` integrado de Angular
+- Formato de moneda basado en localización
+- Transformación visual sin modificar los datos originales
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Mostrar edad con texto adicional
+### ✅ 1. Cambiar el símbolo a código ISO
 
 ```html
-<p>Tienes aproximadamente {{ '1985-09-01' | edad }} años de experiencia.</p>
+<p>{{ precio1 | currency:'EUR':'code' }}</p>
 ```
 
-📌 **¿Por qué?**: Puedes integrar el pipe directamente dentro de frases y contenido del template.
+📌 **¿Por qué?**: En lugar de mostrar `€`, verás `EUR`, lo cual es útil en contextos más formales.
 
 ---
 
-### ✅ 2. Validar entrada vacía o inválida
+### ✅ 2. Mostrar sin decimales
 
-```ts
-transform(fechaNacimiento: string | Date): number | string {
-  if (!fechaNacimiento) return 'Fecha no válida';
-  // resto del cálculo...
-}
+```html
+<p>{{ precio2 | currency:'USD':'symbol':'1.0-0' }}</p>
 ```
 
-📌 **¿Por qué?**: Mejora la robustez ante entradas incorrectas o vacías.
+📌 **¿Por qué?**: Para simplificar la visualización si no necesitas mostrar céntimos.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Carga el componente y observa el número mostrado.
-2. Cambia la fecha de nacimiento en el HTML y comprueba que se actualiza la edad.
-3. Prueba introducir una fecha inválida o vacía y asegúrate de que el pipe lo gestiona correctamente si has hecho la variación 2.
+1. Comprueba que los valores `precio1` y `precio2` aparecen en formato moneda en la plantilla.
+2. Cambia el valor de las propiedades y observa que el formato se mantiene correctamente.
+3. Prueba con otros códigos de moneda como `GBP`, `JPY`, etc.
 
 ---
 

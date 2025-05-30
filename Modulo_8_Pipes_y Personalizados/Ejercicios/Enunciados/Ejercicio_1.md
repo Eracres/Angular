@@ -1,106 +1,33 @@
-# 🧪 Ejemplo 1: Configuración de un pipe personalizado
+# 📋 Ejercicio 1: Mostrar nombres en mayúscula con uppercase
 
 ## 🎯 Objetivo
-
-Crear un pipe personalizado en Angular que aplique un descuento porcentual a un precio numérico.
-
----
-
-## 📁 Ruta: src/app/pipes/descuento.pipe.ts
-
-```ts
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({ name: 'descuento' })
-export class DescuentoPipe implements PipeTransform {
-  transform(valor: number, porcentaje: number): number {
-    return valor - (valor * porcentaje / 100);
-  }
-}
-```
+Aplicar el pipe `uppercase` para transformar dinámicamente nombres a mayúsculas en el HTML.
 
 ---
 
-## 📁 Ruta: src/app/pipes/precio.component.ts
+## 📝 Instrucciones
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-precio',
-  templateUrl: './precio.component.html'
-})
-export class PrecioComponent {
-  precioOriginal: number = 100;
-}
-```
+1. Crea un nuevo componente llamado `UsuariosComponent`.
+2. Dentro del componente, define un arreglo de nombres de usuarios.
+3. Usa `*ngFor` para iterar sobre los nombres y muestra cada uno aplicando el pipe `uppercase`.
 
 ---
 
-## 📁 Ruta: src/app/pipes/precio.component.html
+## ✅ Criterios de evaluación
 
-```html
-<p>Precio con 20% de descuento: {{ precioOriginal | descuento:20 }}€</p>
-```
-
----
-
-## ✅ ¿Qué hace este componente?
-
-Este ejemplo muestra cómo **crear y aplicar un pipe personalizado** llamado `descuento`.  
-Este pipe toma un número (precio) y le aplica un porcentaje de descuento.  
-El resultado es un valor numérico reducido, útil para mostrar precios finales directamente desde la plantilla.
-
----
-
-## 🧠 Conceptos aplicados
-
-- Decorador `@Pipe` para definir un pipe personalizado
-- Implementación de `PipeTransform` con parámetros
-- Uso de pipes personalizados en plantillas HTML
-
----
-
-## 💡 Variaciones sugeridas
-
-### ✅ 1. Aplicar descuento dinámico desde el componente
-
-```ts
-precioOriginal: number = 150;
-porcentajeDescuento: number = 15;
-```
-
-```html
-<p>{{ precioOriginal | descuento:porcentajeDescuento }}€</p>
-```
-
-📌 **¿Por qué?**: Permite mayor flexibilidad y reutilización al cambiar el descuento desde la lógica del componente.
-
----
-
-### ✅ 2. Encadenar con `currency` para mostrarlo con formato de moneda
-
-```html
-<p>{{ precioOriginal | descuento:20 | currency }}</p>
-```
-
-📌 **¿Por qué?**: Mejora la presentación del resultado en la interfaz de usuario.
-
----
-
-## ✅ ¿Cómo verificar que funciona correctamente?
-
-1. Declara `DescuentoPipe` en el módulo (`declarations`).
-2. Utiliza `<app-precio>` en la vista principal.
-3. Asegúrate de que el resultado del cálculo se actualiza correctamente según el porcentaje.
-
----
+- El componente se llama correctamente `UsuariosComponent`.
+- Se define un arreglo con al menos 3 nombres.
+- Se utiliza el pipe `uppercase` en el HTML para transformarlos.
+- Se muestra la lista correctamente usando `*ngFor`.
 
 ## 🔁 Navegación
 
-### 🧪 - Ejemplo 2 [➡️](./Ejemplo_2.md)  
-### 🧪 - [Volver a Ejemplos](../README.md)  
-### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)  
-### 📘 - [Volver a Módulo 8](../../Modulo_8.md)  
-### 🏠 - [Inicio](../../../README.md)
+### 📋 - Ejercicio 2 [➡️](./Ejercicio_2.md)
 
+### 📋 - [Volver a Ejercicios](../README.md)
+
+### 🧪 - [Ir a Ejemplos](../../Ejemplos/README.md)
+
+### 📘 - [Volver a Módulo 8](../../Modulo_8.md)
+
+### 🏠 - [Inicio](../../../README.md)

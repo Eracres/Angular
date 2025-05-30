@@ -1,113 +1,84 @@
-# 🧪 Ejemplo 2: Uso de servicio en componente
+# 🧪 Ejemplo 2: Formatear fechas con date pipe
 
 ## 🎯 Objetivo
-Inyectar un servicio en un componente para obtener datos centralizados.
+Utilizar el pipe `date` de Angular para mostrar fechas con diferentes formatos directamente en la vista.
 
-## 📁 Ruta: src/app/producto.service.ts
+## 📁 Ruta: src/app/fecha/fecha.component.ts
 ```ts
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ProductoService {
-  productos = [
-    { id: 1, nombre: 'Teclado', precio: 50 },
-    { id: 2, nombre: 'Mouse', precio: 25 }
-  ];
-
-  obtenerProductos() {
-    return this.productos;
-  }
-}
-```
-
-## 📁 Ruta: src/app/listado/listado.component.ts
-```ts
-import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '../producto.service';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html'
+  selector: 'app-fecha',
+  templateUrl: './fecha.component.html'
 })
-export class ListadoComponent implements OnInit {
-  productos: any[] = [];
-
-  constructor(private productoService: ProductoService) {}
-
-  ngOnInit() {
-    this.productos = this.productoService.obtenerProductos();
-  }
+export class FechaComponent {
+  fechaActual = new Date();
 }
 ```
 
-## 📁 Ruta: src/app/listado/listado.component.html
+## 📁 Ruta: src/app/fecha/fecha.component.html
 ```html
-<ul>
-  <li *ngFor="let producto of productos">
-    {{ producto.nombre }} - ${{ producto.precio }}
-  </li>
-</ul>
+<p>Fecha corta: {{ fechaActual | date:'shortDate' }}</p>
+<p>Fecha larga: {{ fechaActual | date:'fullDate' }}</p>
+<p>Hora: {{ fechaActual | date:'shortTime' }}</p>
 ```
 
 ---
 
-## ✅ ¿Qué hace este ejemplo?
+## ✅ ¿Qué hace este componente?
 
-Este componente muestra cómo inyectar un servicio (`ProductoService`) y consumir un método (`obtenerProductos()`) para cargar dinámicamente datos y mostrarlos en una lista HTML.
+Este ejemplo muestra cómo utilizar el **pipe `date`** para formatear una variable `Date` directamente desde el HTML.  
+Permite mostrar la fecha en múltiples formatos sin necesidad de manipularla en el componente.
 
 ---
 
 ## 🧠 Conceptos aplicados
 
-- Inyección de dependencias en el constructor
-- Llamadas a métodos del servicio
-- Binding e iteración con `*ngFor`
+- Uso de `Date` en TypeScript
+- Aplicación del pipe `date` en Angular
+- Formateo directo en la plantilla sin modificar la lógica
 
 ---
 
 ## 💡 Variaciones sugeridas
 
-### ✅ 1. Usar `ngOnInit` para inicializar datos
+### ✅ 1. Usar el formato completo de fecha y hora
 
-```ts
-ngOnInit() {
-  this.productos = this.productoService.obtenerProductos();
-}
+```html
+<p>{{ fechaActual | date:'full' }}</p>
 ```
-📌 **¿Por qué?**: Es el ciclo de vida recomendado para inicializar datos.
+
+📌 **¿Por qué?**: Es útil para mostrar fechas completas en informes o detalles.
 
 ---
 
-### ✅ 2. Agregar un botón para actualizar productos
+### ✅ 2. Mostrar solo el día de la semana
 
 ```html
-<button (click)="cargarProductos()">Recargar</button>
+<p>{{ fechaActual | date:'EEEE' }}</p>
 ```
 
-```ts
-cargarProductos() {
-  this.productos = this.productoService.obtenerProductos();
-}
-```
-📌 **¿Por qué?**: Permite recargar los datos bajo demanda.
+📌 **¿Por qué?**: Muestra solo el nombre del día, útil para resúmenes diarios o agendas.
 
 ---
 
 ## ✅ ¿Cómo verificar que funciona correctamente?
 
-1. Verifica que el servicio `ProductoService` esté bien importado.
-2. Comprueba que el array `productos` se carga en el `ngOnInit`.
-3. Asegúrate de que los datos se renderizan correctamente con `*ngFor`.
+1. Asegúrate de que `fechaActual` esté definido como instancia de `Date`.
+2. Verifica que en el navegador se muestran las fechas formateadas correctamente.
+3. Cambia el valor de `fechaActual` manualmente para ver otras fechas y formatos.
 
 ---
 
 ## 🔁 Navegación
 
 ### 🧪 - [⬅️](./Ejemplo_1.md) Ejemplo 1 - Ejemplo 3 [➡️](./Ejemplo_3.md)
+
 ### 🧪 - [Volver a Ejemplos](../README.md)
+
 ### 📋 - [Ir a Ejercicios](../../Ejercicios/README.md)
-### 📘 - [Volver a Módulo 5](../../Modulo_5.md)
+
+### 📘 - [Volver a Módulo 8](../../Modulo_8.md)
+
 ### 🏠 - [Inicio](../../../README.md)
 

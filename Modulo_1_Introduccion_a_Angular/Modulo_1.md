@@ -89,6 +89,41 @@ El componente queda registrado automáticamente en `app.module.ts`.
 
 ---
 
+## 🧠 Fundamentos internos de Angular
+
+### 🔹 Motor de renderizado y detección de cambios
+
+Angular usa su propio motor para analizar cambios en los datos y actualizar el DOM. Cada componente tiene un "contexto" que se evalúa automáticamente cuando ocurren eventos (clicks, cambios en inputs, etc.) gracias al sistema de **Change Detection**.
+
+### 🔹 ¿Qué es Zone.js?
+
+Angular usa `Zone.js` para detectar cuándo cambian los datos. Esta librería "intercepta" eventos asíncronos como `setTimeout`, `promesas`, eventos del DOM, etc., y fuerza a Angular a comprobar si debe actualizar la vista.
+
+### 🔹 Compilación AOT vs JIT
+
+- **JIT (Just In Time)**: compila la app en el navegador (usado durante desarrollo).
+- **AOT (Ahead Of Time)**: compila la app antes de cargarla (usado en producción para mejor rendimiento).
+
+### 🔹 Monorepos y múltiples aplicaciones
+
+Angular permite gestionar varios proyectos dentro del mismo workspace, útil para apps grandes con paneles administrativos, sitios públicos y librerías compartidas.
+
+### 🔹 Herramientas modernas de desarrollo
+
+- **ESLint**: ayuda a mantener un código limpio y sin errores.
+- **Prettier**: formateador automático de código.
+- **Husky + commitlint**: controlan los commits antes de que lleguen al repositorio.
+- **Vitest o Jest**: opciones modernas para testing más rápido que Jasmine/Karma.
+
+### 🔹 Buenas prácticas desde el inicio
+
+- Nombrar carpetas y archivos de forma coherente.
+- Separar bien la lógica de negocio del HTML.
+- Usar interfaces TypeScript para definir estructuras de datos.
+- Comenzar organizando el proyecto por módulos desde el principio.
+
+---
+
 ## 🧪 Ejemplos de este módulo
 
 #### [🔗 Listado de Ejemplos](./Ejemplos/README.md)

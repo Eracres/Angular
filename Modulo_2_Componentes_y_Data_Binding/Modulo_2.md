@@ -76,6 +76,130 @@ mostrarInfo() {
 <p>{{ precio }}</p>
 <button (click)="mostrarInfo()">Ver detalles</button>
 ```
+---
+
+# 🧩 Ampliación: Formularios Reactivos
+
+Angular también ofrece **formularios reactivos**, una alternativa más escalable a los formularios template-driven (`ngModel`). Permiten un control completo desde el código TypeScript.
+
+---
+
+## 🛠️ Fundamentos de formularios reactivos
+
+Para empezar con formularios reactivos, necesitas importar el módulo `ReactiveFormsModule` en `app.module.ts`:
+
+```ts
+import { ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [ ReactiveFormsModule ]
+})
+export class AppModule { }
+```
+
+---
+
+## ✅ Crear un formulario reactivo básico
+
+```ts
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-formulario',
+  templateUrl: './formulario.component.html'
+})
+export class FormularioComponent {
+  formulario = new FormGroup({
+    nombre: new FormControl(''),
+    email: new FormControl('')
+  });
+
+  enviar() {
+    console.log(this.formulario.value);
+  }
+}
+```
+
+### ✅ HTML asociado
+
+```html
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+  <input formControlName="nombre" placeholder="Nombre">
+  <input formControlName="email" placeholder="Email">
+  <button type="submit">Enviar</button>
+</form>
+```
+
+---
+
+## 🛠️ Validaciones sincrónicas
+
+Puedes usar validadores como `Validators.required`, `Validators.minLength`, etc.
+
+```ts
+import { Validators } from '@angular/forms';
+
+formulario = new FormGroup({
+  nombre: new FormControl('', [Validators.required]),
+  email: new FormControl('', [Validators.required, Validators.email])
+});
+```
+
+---
+
+## 🔍 Validaciones personalizadas
+
+```ts
+function soloLetras(control: FormControl) {
+  const regex = /^[a-zA-Z ]+$/;
+  return regex.test(control.value) ? null : { soloLetras: true };
+}
+```
+
+---
+
+## 🌐 Validaciones asincrónicas
+
+Se usan para consultar a un servidor si un dato es válido:
+
+```ts
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+
+function emailNoExistente(control: FormControl) {
+  return of(control.value === 'existe@mail.com' ? { emailDuplicado: true } : null).pipe(delay(1000));
+}
+```
+
+---
+
+## 📚 Formularios anidados
+
+Puedes agrupar controles anidados:
+
+```ts
+formulario = new FormGroup({
+  usuario: new FormGroup({
+    nombre: new FormControl(''),
+    email: new FormControl('')
+  }),
+  password: new FormControl('')
+});
+```
+
+---
+
+## 🎯 Mostrar errores dinámicamente
+
+```html
+<div *ngIf="formulario.get('email')?.errors?.['required']">
+  El email es obligatorio
+</div>
+<div *ngIf="formulario.get('email')?.errors?.['email']">
+  El formato no es válido
+</div>
+```
 
 ---
 

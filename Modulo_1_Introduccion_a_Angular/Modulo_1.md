@@ -63,6 +63,91 @@ Esto crea los archivos:
 
 ---
 
+## 🔄 Comunicación entre Componentes
+
+### ✅ @Input() vs @Output()
+
+- `@Input()`: Permite recibir datos desde el componente padre.
+- `@Output()`: Permite emitir eventos desde el hijo hacia el padre.
+
+```ts
+// saludo.component.ts (Hijo)
+@Input() nombre!: string;
+@Output() saludar = new EventEmitter<string>();
+
+emitirSaludo() {
+  this.saludar.emit(`Hola ${this.nombre}`);
+}
+```
+
+```html
+<!-- app.component.html (Padre) -->
+<app-saludo [nombre]="'Angular'" (saludar)="manejarSaludo($event)"></app-saludo>
+```
+
+---
+
+### ✅ EventEmitter con objetos complejos
+
+```ts
+@Output() seleccion = new EventEmitter<{ id: number; nombre: string }>();
+
+seleccionarItem() {
+  this.seleccion.emit({ id: 1, nombre: 'Angular' });
+}
+```
+
+📌 Esto permite enviar estructuras completas y no solo strings o valores primitivos.
+
+---
+
+### ✅ ViewChild y acceso al DOM
+
+`ViewChild` permite acceder directamente a elementos del DOM o componentes hijos:
+
+```ts
+@ViewChild('miInput') inputRef!: ElementRef;
+
+ngAfterViewInit() {
+  this.inputRef.nativeElement.focus();
+}
+```
+
+```html
+<input #miInput type="text">
+```
+
+📌 Muy útil para manipular inputs, formularios, canvas, etc.
+
+---
+
+### ✅ Content Projection con <ng-content>
+
+Permite insertar contenido dinámico en un componente:
+
+```html
+<!-- componente padre -->
+<app-card>
+  <p>Este contenido será proyectado</p>
+</app-card>
+```
+
+```html
+<!-- app-card.component.html -->
+<div class="card">
+  <ng-content></ng-content>
+</div>
+```
+
+También puedes seleccionar contenido específico:
+
+```html
+<ng-content select="header"></ng-content>
+<ng-content select="footer"></ng-content>
+```
+
+---
+
 ## 🧪 Ejemplos de este módulo
 
 #### [🔗 Listado de Ejemplos](./Ejemplos/README.md)
@@ -80,3 +165,4 @@ Esto crea los archivos:
 ### 📘 - Módulo 2 [➡️](../Modulo_2_Componentes_y_Data_Binding/Modulo_2.md)
 
 ### 🏠 - [Volver al Inicio](../README.md)
+

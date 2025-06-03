@@ -60,6 +60,84 @@ Aplica estilos CSS directamente desde el componente.
 
 ---
 
+# 🧩 Ampliación: Routing avanzado
+
+Angular permite implementar navegación compleja con rutas avanzadas para construir aplicaciones escalables y modulares.
+
+---
+
+## 🔢 Parámetros de ruta y query params
+
+### 📍 Ruta con parámetros
+```ts
+{ path: 'producto/:id', component: ProductoDetalleComponent }
+```
+```ts
+// En el componente
+this.route.snapshot.paramMap.get('id');
+```
+
+### 🔍 Query Params
+```html
+<a [routerLink]="['/productos']" [queryParams]="{ categoria: 'tecnologia' }">Ver</a>
+```
+```ts
+this.route.snapshot.queryParamMap.get('categoria');
+```
+
+---
+
+## 👶 Rutas hijas y anidadas
+
+Las rutas hijas permiten mostrar componentes secundarios dentro de un padre.
+
+```ts
+{
+  path: 'admin',
+  component: AdminComponent,
+  children: [
+    { path: 'usuarios', component: UsuariosComponent },
+    { path: 'reportes', component: ReportesComponent }
+  ]
+}
+```
+
+En el template padre se usa `<router-outlet></router-outlet>`.
+
+---
+
+## 🐢 Lazy loading de módulos
+
+Carga módulos solo cuando se necesiten para mejorar el rendimiento.
+
+```ts
+{ path: 'productos', loadChildren: () => import('./productos/productos.module').then(m => m.ProductosModule) }
+```
+
+El módulo debe usar `RouterModule.forChild(...)` en lugar de `forRoot()`.
+
+---
+
+## 🔄 Route resolvers
+
+Permiten cargar datos antes de que se muestre una ruta.
+
+```ts
+{ path: 'perfil', component: PerfilComponent, resolve: { usuario: UsuarioResolver } }
+```
+
+```ts
+@Injectable({ providedIn: 'root' })
+export class UsuarioResolver implements Resolve<Usuario> {
+  constructor(private usuarioService: UsuarioService) {}
+  resolve() {
+    return this.usuarioService.obtenerUsuario();
+  }
+}
+```
+
+---
+
 ## 🧠 ¿Qué ventajas tienen?
 
 - Reutilización de lógica visual
